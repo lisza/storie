@@ -1,26 +1,9 @@
-var path = require("path");
+//React
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = {
-  context: __dirname,
-  entry: "./frontend/index.jsx",
-  output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
-  },
-  module: {
-    loaders: [
-      {
-        test: [/\.jsx?$/, /\.js?$/],
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
-  },
-  devtool: 'source-maps',
-  resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
+
+  const root = document.getElementById('root');
+  ReactDOM.render(<h1>Welcome to Storie</h1>, root);
+});
