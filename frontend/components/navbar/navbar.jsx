@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
-  if currentUser
   <nav>
     <Link to="/login">Login</Link>
     <Link to="/signup">Sign Up</Link>
@@ -15,15 +14,20 @@ const personalNav = (currentUser, logout) => (
       <img
         className="user-image-small"
         src={ currentUser.image_url }
-        width="50px"/>
+      />
     </Link>
-    // <Link to="/stories/new">Write a story</Link>
-    <button onClick={logout}>Log Out</button>
+    <a href="" onClick={logout}>Log Out</a>
   </nav>
 );
 
-const Nav = ({ currentUser, logout }) => (
-  currentUser ? personalNav(currentUser, logout) : sessionLinks()
-);
+const NavBar = ({ currentUser, logout }) => {
+  return(
+    <nav className="navbar">
+      <Link to="/">storie</Link>
+      <Link to="stories/new">Write a story</Link>
+      {currentUser ? personalNav(currentUser, logout) : sessionLinks()}
+    </nav>
+  )
+};
 
-export default Nav;
+export default NavBar;

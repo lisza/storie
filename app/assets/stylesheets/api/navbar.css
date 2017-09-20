@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+.navbar nav {
+  display: flex;
+}
+
+.user-image-small {
+  width: 40px;
+}
