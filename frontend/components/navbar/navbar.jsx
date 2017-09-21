@@ -1,12 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const sessionLinks = () => (
-  <nav>
-    <Link to="/login">Login</Link>
-    <Link to="/signup">Sign Up</Link>
-  </nav>
-);
+import SessionFormContainer from '../session_form/session_form_container'
 
 const personalNav = (currentUser, logout) => (
   <nav>
@@ -23,9 +17,9 @@ const personalNav = (currentUser, logout) => (
 const NavBar = ({ currentUser, logout }) => {
   return(
     <nav className="navbar">
-      <Link to="/">storie</Link>
+      <Link to="/"><span className="logo">storie</span></Link>
       <Link to="stories/new">Write a story</Link>
-      {currentUser ? personalNav(currentUser, logout) : sessionLinks()}
+      {currentUser ? personalNav(currentUser, logout) : <SessionFormContainer />}
     </nav>
   )
 };

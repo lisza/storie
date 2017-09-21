@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   /*font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;*/
+   color: #343336;
+   font-family: sans-serif;
+ }
+
+ .logo {
+   font-family: Courier;
+   font-style: italic;
+   font-size: 30px;
+   color: #FF3399;
+ }

@@ -1,4 +1,34 @@
+.session-form-modal {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  width: 30%;
+  margin: auto;
+  margin-top: 15%;
+  padding: 2%;
+  background: #FFFFFF;
+}
+
 .session-form {
-  border: 1px solid orange;
-  width: 50%;
+  // border: 1px solid grey;
+  width: 80%;
+  margin: 0 auto;
+}
+
+// asterisk selector matches each child
+.session-form * {
+  margin-bottom: 10px;
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid lightgrey;
+  height: 30px;
+}
+
+.login-form-button {
+  color: #FF3399;
+}
+
+.session-errors {
+  padding-top: 10px;
+  color: orange;
 }

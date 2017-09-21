@@ -8,12 +8,10 @@ const App = () => (
   <header>
 
     <NavbarContainer />
-
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+    
   </header>
-
-
 );
 
 export default App;
+
+// <AuthRoute path="/" component={SessionFormContainer} />

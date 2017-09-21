@@ -2,13 +2,24 @@
   display: flex;
   width: 80%;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid grey;
+  margin: auto;
+  padding: 20px 0;
 }
 
 .navbar nav {
   display: flex;
+  align-items: center;
 }
+
+
 
 .user-image-small {
   width: 40px;
+  border-radius: 100%;
+}
+
+.navbar * {
+  padding: 0 5px;
 }
