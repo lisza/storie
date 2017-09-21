@@ -10,16 +10,20 @@ class Navbar extends React.Component {
   personalNav(currentUser, logout) {
     return (
       <nav>
-      <Link to={`/users/${currentUser.id}`}>
-        <img
-          className="user-image-small"
-          src={ currentUser.image_url }
-        />
-      </Link>
-      <span onClick={ logout }>Log Out</span> // add styling for button cursor pointer
-    </nav>
-  );
+        <Link to={`/users/${currentUser.id}`}>
+          <img
+            className="user-image-small"
+            src={ currentUser.image_url }
+            />
+        </Link>
+        <span onClick={ logout }>Log Out</span>
+      </nav>
+    );
   }
+
+  // We turned <a> into span to prevent weird double logout rerendering
+  // But the cursor pointer is only on links and buttons, so I need to
+  // add styling for cursor pointer somehow, give it a className...
 
   render() {
     const { currentUser, logout } = this.props;
