@@ -16,6 +16,8 @@ class SessionForm extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.toggleForms = this.toggleForms.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+
+    console.log("initialize");
   }
 
   handleOpenModal(boolean) {
@@ -27,6 +29,7 @@ class SessionForm extends React.Component {
   }
 
   handleCloseModal() {
+    console.log("closing modal");
     this.setState({ showModal: false });
   }
 
@@ -39,6 +42,8 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state;
+    // NOT WORKING. NO CONSOLE LOGS SHOW UP EITHER
+    // this.setState({ username: "", password: "" });
 
     if (this.state.loginForm) {
       this.props.login(user);

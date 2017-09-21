@@ -5,9 +5,10 @@ import Navbar from './navbar';
 const mapStateToProps = ({ session }) => {
   if (session) {
     return { currentUser: session.currentUser }
-  } else {
-    return { currentUser: null }
   }
+  // else {
+  //   return { currentUser: null }
+  // }
 };
 
 const mapDispatchToProps = (dispatch) => ({
