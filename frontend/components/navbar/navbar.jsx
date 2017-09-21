@@ -8,7 +8,8 @@ class Navbar extends React.Component {
   }
 
   personalNav(currentUser, logout) {
-    <nav>
+    return (
+      <nav>
       <Link to={`/users/${currentUser.id}`}>
         <img
           className="user-image-small"
@@ -17,20 +18,22 @@ class Navbar extends React.Component {
       </Link>
       <a href="" onClick={ logout }>Log Out</a>
     </nav>
+  );
   }
 
-  render({ currentUser, logout }) {
+  render() {
+    const { currentUser, logout } = this.props;
     return(
       <nav className="navbar">
         <Link to="/"><span className="logo">storie</span></Link>
         <Link to="stories/new">Write a story</Link>
-        {currentUser ? personalNav(currentUser, logout) : <SessionFormContainer />}
+        {currentUser ? this.personalNav(currentUser, logout) : <SessionFormContainer />}
       </nav>
     );
   }
 }
 
-export default NavBar;
+export default Navbar;
 //
 // const personalNav = (currentUser, logout) => (
 //   <nav>

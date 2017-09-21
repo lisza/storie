@@ -3,12 +3,13 @@ import { logout } from '../../actions/session_actions';
 import Navbar from './navbar';
 
 const mapStateToProps = ({ session }) => {
-  if (session) {
-    return { currentUser: session.currentUser }
-  }
+  // if (session) {
+  //   return { currentUser: session.currentUser }
+  // }
   // else {
   //   return { currentUser: null }
   // }
+  return { currentUser: session.currentUser };
 };
 
 const mapDispatchToProps = (dispatch) => ({

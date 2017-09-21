@@ -9,13 +9,13 @@ const SessionErrorsReducer = (state = [], action) => {
 
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:
-      const errors = action.errors;
-      return merge({}, state, { errors })
+      // const errors = action.errors;
+      // return merge({}, state, { errors })
+      return action.errors;
     // case RECEIVE_CURRENT_USER:
     //   return [];
     case CLEAR_ERRORS:
-      const newState = Object.assign({}, state, { errors: [] })
-      return newState;
+      return [];
     default:
       return state;
   }

@@ -92,6 +92,8 @@ class SessionForm extends React.Component {
     // { this.state.loginForm ? null : this.renderEmailForm() }
     // I'd have to write renderEmailForm of course.
 
+    console.log(this.props);
+
     return (
       <nav>
 
