@@ -16,7 +16,7 @@ class Navbar extends React.Component {
           src={ currentUser.image_url }
         />
       </Link>
-      <a href="" onClick={ logout }>Log Out</a>
+      <span onClick={ logout }>Log Out</span> // add styling for button cursor pointer
     </nav>
   );
   }
