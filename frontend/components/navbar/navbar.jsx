@@ -30,7 +30,7 @@ class Navbar extends React.Component {
   }
 }
 
-// export default NavBar;
+export default NavBar;
 //
 // const personalNav = (currentUser, logout) => (
 //   <nav>
