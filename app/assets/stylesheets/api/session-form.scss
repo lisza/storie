@@ -1,7 +1,7 @@
 .session-form-modal {
   border: 1px solid lightgrey;
   border-radius: 5px;
-  width: 30%;
+  width: 260px;
   margin: auto;
   margin-top: 15%;
   padding: 2%;
@@ -26,6 +26,11 @@ input[type=text], input[type=password] {
 
 .login-form-button {
   color: #FF3399;
+}
+
+.demo-login-button {
+  color: orange;
+  margin-left: 10px;
 }
 
 .session-errors {

@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.toggleForms = this.toggleForms.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleOpenModal(boolean) {
@@ -61,6 +62,11 @@ class SessionForm extends React.Component {
     } else {
       return <p>Already have an account? Login</p>;
     }
+  }
+
+  demoLogin(event) {
+    event.preventDefault();
+    this.props.login({username: "guest", password: "password"})
   }
 
   renderErrors() {
@@ -117,8 +123,11 @@ class SessionForm extends React.Component {
 
             <br/>
 
-            <button className="login-form-button" onClick={this.handleSubmit}>
+            <button className="login-form-button" onClick={ this.handleSubmit }>
               {this.toggleLoginButton()}
+            </button>
+            <button className="demo-login-button" onClick={ this.demoLogin }>
+              Demo Login
             </button>
 
             <Link to="/" onClick={this.toggleForms}>
