@@ -3,7 +3,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.image_url = ""
-      @user.image_url = "assets/user_image.png"
+      # @user.image_url = "assets/user_image.png"
+      @user.image_url = "https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
     end
 
     if @user.save
