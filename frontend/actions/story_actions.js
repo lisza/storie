@@ -1,21 +1,22 @@
 import * as ApiUtil from '../util/story_api_util';
+import { receiveErrors } from './error_actions';
 
 export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
-export const RECEIVE_STORY_ERRORS = 'RECEIVE_STORY_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const fetchStories = () => (dispatch) => (
   ApiUtil.fetchStories().then(stories => (
     dispatch(receiveStories(stories)
-  ))
+  ), errors => (
+    dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const fetchStory = (id) => (dispatch) => (
   ApiUtil.fetchStory(id).then(story => (
     dispatch(receiveStories(story)
-  ))
+  ), errors => (
+    dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const createStory = (story) => (dispatch) => (
@@ -55,13 +56,4 @@ export const receiveStory = (story) => ({
 export const removeStory = (story) => ({
   type: REMOVE_STORY,
   story
-});
-
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_STORY_ERRORS,
-  errors
-});
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS,
 });
