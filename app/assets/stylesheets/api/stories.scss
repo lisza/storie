@@ -1,3 +1,23 @@
 // Place all the styles related to the Api::Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.story-form {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  width: 50%;
+  margin: 10% auto;
+}
+
+.story-form * {
+  margin: 10px;
+}
+
+.story-form *:hover {
+  background: #ffd;
+}
+
+.story-form textarea {
+  width: 90%;
+  min-height: 200px;
+}

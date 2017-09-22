@@ -10,6 +10,7 @@ export const fetchStories = () => (dispatch) => (
     dispatch(receiveStories(stories)
   ), errors => (
     dispatch(receiveErrors(errors.responseJSON)))
+  ))
 );
 
 export const fetchStory = (id) => (dispatch) => (
@@ -17,29 +18,30 @@ export const fetchStory = (id) => (dispatch) => (
     dispatch(receiveStories(story)
   ), errors => (
     dispatch(receiveErrors(errors.responseJSON)))
+  ))
 );
 
 export const createStory = (story) => (dispatch) => (
   ApiUtil.createStory(story).then(newStory => (
-    dispatch(receiveStory(newStory))
+    dispatch(receiveStory(newStory)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON))
+    dispatch(receiveErrors(errors.responseJSON)))
   ))
 );
 
 export const updateStory = (story) => (dispatch) => (
   ApiUtil.updateStory(story).then(newStory => (
-    dispatch(receiveStory(newStory))
+    dispatch(receiveStory(newStory)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON))
+    dispatch(receiveErrors(errors.responseJSON)))
   ))
 );
 
-export const deleteStory = (story) -> (dispatch) => (
+export const deleteStory = (story) => (dispatch) => (
   ApiUtil.deleteStory(story).then(story => (
-    dispatch(removeStory(story))
+    dispatch(removeStory(story)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON))
+    dispatch(receiveErrors(errors.responseJSON)))
   ))
 );
 
