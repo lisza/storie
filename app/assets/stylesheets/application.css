@@ -26,3 +26,7 @@
    font-size: 30px;
    color: #FF3399;
  }
+
+ .button-cursor-pointer {
+   cursor: pointer;
+ }

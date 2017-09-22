@@ -16,7 +16,7 @@ class Navbar extends React.Component {
             src={ currentUser.image_url }
             />
         </Link>
-        <span onClick={ logout }>Log Out</span>
+        <span className="button-cursor-pointer" onClick={ logout }>Log Out</span>
       </nav>
     );
   }
@@ -38,27 +38,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-//
-// const personalNav = (currentUser, logout) => (
-//   <nav>
-//     <Link to={`/users/${currentUser.id}`}>
-//       <img
-//         className="user-image-small"
-//         src={ currentUser.image_url }
-//       />
-//     </Link>
-//     <a href="" onClick={logout}>Log Out</a>
-//   </nav>
-// );
-//
-// const NavBar = ({ currentUser, logout }) => {
-//   return(
-//     <nav className="navbar">
-//       <Link to="/"><span className="logo">storie</span></Link>
-//       <Link to="stories/new">Write a story</Link>
-//       {currentUser ? personalNav(currentUser, logout) : <SessionFormContainer />}
-//     </nav>
-//   )
-// };
-//
-// export default NavBar;

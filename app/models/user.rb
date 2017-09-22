@@ -8,6 +8,10 @@ class User < ApplicationRecord
   attr_reader :password
 
   # Associations here once I have my other db tables
+  has_many :authored_stories,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Story
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
