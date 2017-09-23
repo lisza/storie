@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//************ StoryIndex styles ***************************************
+.stories-index {
+  width: 80%;
+  // height: auto;
+  border: 1px solid lightgrey;
+  margin: 5% auto;
+  padding: 20px;
+  // display: flex;
+}
+// TODO How to make this container have a height that corresponds to the content height?
+
+.stories-index-content {
+  margin: auto;
+}
+
+//************ StoryIndexThumb styles **********************************
+.story-thumb-box {
+  // display: block;
+  float: left;
+  border: 1px solid lightgrey;
+  width: 300px;
+  max-height: 300px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.story-thumb-content {
+
+}
+
+.story-thumb-content h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+//************ ShowStory styles ****************************************
 .story {
   // border: 1px solid lightgrey;
   // border-radius: 5px;
@@ -33,7 +70,7 @@
 }
 
 
-
+//************ StoryForm styles ****************************************
 .story-form {
   border: 1px solid lightgrey;
   border-radius: 5px;

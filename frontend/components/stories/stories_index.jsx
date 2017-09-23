@@ -1,8 +1,8 @@
 import React from 'react';
-// import StoriesIndexItem from './stories_index_item';
+import StoriesIndexThumb from './stories_index_thumb';
 
 class StoriesIndex extends React.Component {
-  
+
   componentDidMount() {
     this.props.fetchStories();
   }
@@ -11,11 +11,11 @@ class StoriesIndex extends React.Component {
     const { stories } = this.props;
 
     return(
-      <div>
+      <div className="stories-index-content">
         <section className="stories-index">
 
           {stories.map(story => (
-              <li>{story.title}</li>
+            <StoriesIndexThumb story={story} key={`story-thumb-${story.id}`} />
             ))
           }
 
