@@ -2,22 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.story {
+  // border: 1px solid lightgrey;
+  // border-radius: 5px;
+  width: 60%;
+  margin: 5% auto;
+  padding: 10px;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #5c5a5a;
+}
+
+.story * {
+  padding: 5px 0;
+}
+
+.story h2 {
+  font-size: 30px;
+}
+
+.story h3 {
+  font-size: 20px;
+  // border-bottom: 1px solid pink;
+}
+
+.story p {
+  font-size: 18px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+
 .story-form {
   border: 1px solid lightgrey;
   border-radius: 5px;
-  width: 50%;
-  margin: 10% auto;
+  width: 60%;
+  margin: 5% auto;
+  padding: 10px;
 }
 
 .story-form * {
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 
+// greenish color for backgorund #e2f9e8;
+// light yellow #ffd
 .story-form *:hover {
-  background: #ffd;
+  background: #e2f9e8;
 }
 
 .story-form textarea {
   width: 90%;
-  min-height: 200px;
+  min-height: 400px;
+}
+
+.story-form-input-title {
+  width: 90%;
+  font-size: 30px;
+}
+
+.story-form-input-description {
+  width: 90%;
+  font-style: italic;
 }

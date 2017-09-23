@@ -3,7 +3,7 @@
   width: 80%;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid lightgrey;
   margin: auto;
   padding: 20px 0;
 }
@@ -15,7 +15,15 @@
 
 .user-image-small {
   width: 40px;
+  height: 40px;
   border-radius: 100%;
+}
+
+.user-info-thumb {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  font-family: sans-serif;
 }
 
 .navbar * {

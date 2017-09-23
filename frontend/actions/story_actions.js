@@ -15,19 +15,19 @@ export const fetchStories = () => (dispatch) => (
 
 export const fetchStory = (id) => (dispatch) => (
   ApiUtil.fetchStory(id).then(story => (
-    dispatch(receiveStories(story)
+    dispatch(receiveStory(story)
   ), errors => (
     dispatch(receiveErrors(errors.responseJSON)))
   ))
 );
 
-export const createStory = (story) => (dispatch) => (
-  ApiUtil.createStory(story).then(newStory => (
-    dispatch(receiveStory(newStory)
-  ), errors => (
-    dispatch(receiveErrors(errors.responseJSON)))
-  ))
-);
+export const createStory = (story) => (dispatch) => {
+  return ApiUtil.createStory(story).then(newStory => (
+    dispatch(receiveStory(newStory))
+  ), errors => {
+    return dispatch(receiveErrors(errors.responseJSON));
+  })
+};
 
 export const updateStory = (story) => (dispatch) => (
   ApiUtil.updateStory(story).then(newStory => (

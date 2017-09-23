@@ -6,16 +6,18 @@ import StoryFormContainer from '../stories/story_form_container';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.clearErrors = this.props.clearErrors.bind(this);
   }
 
   personalNav(currentUser, logout) {
     return (
       <nav>
-        <Link to={`/users/${currentUser.id}`}>
+        <Link className="user-info-thumb" to={`/users/${currentUser.id}`}>
           <img
             className="user-image-small"
             src={ currentUser.image_url }
-            />
+            /> Hi, {currentUser.username}
         </Link>
         <span className="button-cursor-pointer" onClick={ logout }>Log Out</span>
       </nav>
@@ -31,7 +33,7 @@ class Navbar extends React.Component {
     return(
       <nav className="navbar">
         <Link to="/"><span className="logo">storie</span></Link>
-        <Link to="stories/new">Write a story</Link>
+        <Link onClick={this.clearErrors} to="/stories/new">Write a story</Link>
         {currentUser ? this.personalNav(currentUser, logout) : <SessionFormContainer />}
       </nav>
     );

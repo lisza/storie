@@ -2,7 +2,7 @@ export const createStory = (story) => (
   $.ajax({
     method: 'POST',
     url: 'api/stories',
-    data: { story }
+    data: {story} 
   })
 );
 

@@ -1,9 +1,12 @@
+require 'faker'
+
 class User < ApplicationRecord
   validates :username, :session_token, :password_digest, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
+  before_save :set_default_image
 
   attr_reader :password
 
@@ -36,5 +39,12 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def set_default_image
+    unless self.image_url
+      color = Faker::Color.hex_color[1..-1]
+      self.image_url = "http://www.tinygraphs.com/spaceinvaders/#{self.username}?&colors=fff&colors=#{color}"
+    end
   end
 end

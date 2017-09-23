@@ -8,6 +8,7 @@ class Api::StoriesController < ApplicationController
     if @story.save
       render :show
     else
+      puts @story.errors.full_messages
       render json: @story.errors.full_messages, status: 422
     end
   end

@@ -8,7 +8,6 @@ class StoryForm extends React.Component {
       title: "",
       description: "",
       body: ""
-      // author_id: this.props.currentUser[id]
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,21 +18,37 @@ class StoryForm extends React.Component {
     return (event) => this.setState({ [field]: event.target.value });
   }
 
-  // This might not work either...
   handleSubmit(event) {
+    console.log("THIS.PROPS :", this.props);
+    console.log("THIS.STATE :", this.state);
+
     event.preventDefault();
     const storyData = Object.assign({}, this.state)
+    this.props.createStory(storyData)
+      .then(() => (
+        this.props.history.push(`/stories/${Object.keys(this.props.stories)[0]}`)
+    ));
+  }
 
-    this.props.createStory( storyData )
-    //   .then(story => {
-    //     this.props.history.push(`/stories/${Object.keys(story)[0]}`)
-    // })
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
 
     return (
       <form className="story-form">
+
+        <div className="session-errors">{this.renderErrors()}</div>
+
         <input className="story-form-input-title"
           value={this.state.title}
           placeholder="Title"
