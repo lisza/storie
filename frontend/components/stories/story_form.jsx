@@ -1,13 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Route } from 'react-router';
 
 class StoryForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
+      id: undefined,
       title: "",
       description: "",
-      body: ""
+      body: "",
+      image_url: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,14 +23,11 @@ class StoryForm extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log("THIS.PROPS :", this.props);
-    console.log("THIS.STATE :", this.state);
-
     event.preventDefault();
-    const storyData = Object.assign({}, this.state)
-    this.props.createStory(storyData)
-      .then(() => (
-        this.props.history.push(`/stories/${Object.keys(this.props.stories)[0]}`)
+
+    this.props.createStory(this.state)
+      .then(({ story }) => (
+        this.props.history.push(`/stories/${story.id}`)
     ));
   }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShowStory extends React.Component {
   constructor(props) {
@@ -21,10 +22,10 @@ class ShowStory extends React.Component {
           <h2>{story.title}</h2>
           <h3>{story.description}</h3>
           <p>{story.body}</p>
-          <div className="user-info-thumb">
+          <Link to={`/users/${story.author.author_id}`} className="user-info-thumb">
             <img className="user-image-small" src={story.author.author_image} />
             {story.author.author_name}
-           </div>
+          </Link>
         </section>
       </div>
     )

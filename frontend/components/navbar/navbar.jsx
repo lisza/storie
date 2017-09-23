@@ -14,10 +14,11 @@ class Navbar extends React.Component {
     return (
       <nav>
         <Link className="user-info-thumb" to={`/users/${currentUser.id}`}>
+          Hello, {currentUser.username}!
           <img
             className="user-image-small"
             src={ currentUser.image_url }
-            /> Hi, {currentUser.username}
+            />
         </Link>
         <span className="button-cursor-pointer" onClick={ logout }>Log Out</span>
       </nav>

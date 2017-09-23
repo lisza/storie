@@ -3,9 +3,9 @@ import StoryForm from './story_form';
 import { createStory } from '../../actions/story_actions';
 import { clearErrors } from '../../actions/error_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, { match }) => ({
   currentUser: state.session.currentUser,
-  stories: state.stories,
+  story: state.stories[match.params.storyId],
   errors: state.errors
 });
 
