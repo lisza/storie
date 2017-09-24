@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import NavbarContainer from './navbar/navbar_container';
 import SessionFormContainer from './session_form/session_form_container';
 import StoriesIndexContainer from './stories/stories_index_container';
@@ -14,9 +14,14 @@ const App = () => (
       <NavbarContainer />
     </header>
 
-    <Route exact path="/" component={StoriesIndexContainer} />
-    <Route path="/stories/:storyId" component={ShowStoryContainer} />
-    <ProtectedRoute path="/stories/new" component={StoryFormContainer} />
+    <Switch>
+      <Route exact path="/" component={StoriesIndexContainer} />
+      <ProtectedRoute path="/stories/new" component={StoryFormContainer} />
+      <Route exact path="/stories/:storyId" component={ShowStoryContainer} />
+
+      <ProtectedRoute path="/stories/:storyId/edit"
+            component={ StoryFormContainer} formType="edit"/>
+    </Switch>
   </section>
 );
 

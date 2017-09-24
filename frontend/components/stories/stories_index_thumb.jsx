@@ -6,16 +6,12 @@ const StoryIndexThumb = ({ story }) => (
 
   <div className="story-thumb-box">
       <Link to={`/stories/${story.id}`}>
-
         <h1>{story.title}</h1>
-
-        <p>{story.body.slice(0,200)}</p>
-
-        <Link className="user-info-thumb" to={`/users/${story.author.author_id}`}>
-          <img className="user-image-small" src={story.author.author_image} />
-          {story.author.author_name}
-        </Link>
-
+        <p>{story.body.slice(0,300)}</p>
+      </Link>
+      <Link className="user-info-thumb" to={`/users/${story.author.author_id}`}>
+        <img className="user-image-small" src={story.author.author_image} />
+        {story.author.author_name}
       </Link>
   </div>
 

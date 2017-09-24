@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import StoryForm from './story_form';
-import { createStory } from '../../actions/story_actions';
+import { createStory, updateStory, fetchStory } from '../../actions/story_actions';
 import { clearErrors } from '../../actions/error_actions';
 
-const mapStateToProps = (state, { match }) => ({
+const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  story: state.stories[match.params.storyId],
+  story: state.stories[ownProps.match.params.storyId],
+  formType: ownProps.formType,
   errors: state.errors
 });
 

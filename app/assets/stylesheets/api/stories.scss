@@ -5,7 +5,7 @@
 //************ StoryIndex styles ***************************************
 .stories-index {
   width: 80%;
-  border: 1px solid lightgrey;
+  // border: 1px solid lightgrey;
   margin: 5% auto;
   // padding: 20px;
   display: flex;
@@ -21,6 +21,7 @@
   flex-grow: 1;
   flex-basis: 360px;
   border: 1px solid lightgrey;
+  border-radius: 3px;
   height: 250px;
   padding: 2%;
   margin: 1%;
@@ -28,8 +29,9 @@
 }
 
 .story-thumb-box h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
+  margin: 5px 0;
 }
 
 .story-thumb-box .user-info-thumb {
