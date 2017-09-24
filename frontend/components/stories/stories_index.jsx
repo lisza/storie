@@ -11,15 +11,13 @@ class StoriesIndex extends React.Component {
     const { stories } = this.props;
 
     return(
-      <div className="stories-index-content">
-        <section className="stories-index">
+      <div className="stories-index">
 
-          {stories.map(story => (
-            <StoriesIndexThumb story={story} key={`story-thumb-${story.id}`} />
-            ))
-          }
+        {stories.map(story => (
+          <StoriesIndexThumb story={story} key={`story-thumb-${story.id}`} />
+          ))
+        }
 
-        </section>
       </div>
     );
   }

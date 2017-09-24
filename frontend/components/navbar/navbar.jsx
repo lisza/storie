@@ -13,6 +13,8 @@ class Navbar extends React.Component {
   personalNav(currentUser, logout) {
     return (
       <nav>
+        <Link onClick={this.clearErrors} to="/stories/new">Write a story</Link>
+
         <Link className="user-info-thumb" to={`/users/${currentUser.id}`}>
           Hello, {currentUser.username}!
           <img
@@ -34,7 +36,6 @@ class Navbar extends React.Component {
     return(
       <nav className="navbar">
         <Link to="/"><span className="logo">storie</span></Link>
-        <Link onClick={this.clearErrors} to="/stories/new">Write a story</Link>
         {currentUser ? this.personalNav(currentUser, logout) : <SessionFormContainer />}
       </nav>
     );

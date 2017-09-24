@@ -25,8 +25,12 @@ input[type=text], input[type=password] {
 }
 
 // TODO this button styling needs to be factored out!
-.login-form-button, .story-publish-button {
+.login-button, .story-publish-button {
   color: #FF3399;
+}
+
+p .login-button {
+  padding-left: 3px;
 }
 
 .demo-login-button {

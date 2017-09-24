@@ -11,6 +11,8 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   createStory: (story) => dispatch(createStory(story)),
+  updateStory: (story) => dispatch(updateStory(story)),
+  fetchStory: (id) => dispatch(fetchStory(id)),
   clearErrors: () => dispatch(clearErrors())
 });
 

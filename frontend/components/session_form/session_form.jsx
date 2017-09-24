@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      loginForm: 'true', //NEW
-      showModal: false //NEW
+      loginForm: 'true',
+      showModal: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -39,7 +39,6 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state;
-
     // reset input fields
     this.setState({ username: "", password: "" });
 
@@ -61,9 +60,11 @@ class SessionForm extends React.Component {
 
   toggleFormLink() {
     if (this.state.loginForm) {
-      return <p>Don't have an account? Sign Up</p>;
+      return <p>Don't have an account?
+        <span className="login-button">Sign Up</span></p>;
     } else {
-      return <p>Already have an account? Login</p>;
+      return <p>Already have an account?
+        <span className="login-button">Login</span></p>;
     }
   }
 
@@ -93,6 +94,7 @@ class SessionForm extends React.Component {
       <nav>
 
         <nav className="session-links">
+          <button onClick={this.handleOpenModal.bind(this, true)} >Write a story</button>
           <button onClick={this.handleOpenModal.bind(this, true)} >Login</button>
           <button onClick={this.handleOpenModal.bind(this, false)} >Sign Up</button>
         </nav>
@@ -125,7 +127,7 @@ class SessionForm extends React.Component {
 
             <br/>
 
-            <button className="login-form-button" onClick={ this.handleSubmit }>
+            <button className="login-button" onClick={ this.handleSubmit }>
               {this.toggleLoginButton()}
             </button>
             <button className="demo-login-button" onClick={ this.demoLogin }>
