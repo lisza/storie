@@ -3,12 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { Route } from 'react-router';
 
 class StoryForm extends React.Component {
-  // THIS IS ALSO RELATED TO THE REFRESH FORM TYPE I THINK...
-  componentWillReceiveProps(nextProps) {
-    this.refreshFormType(nextProps);
-    // this.focusFirstElement();
-  }
-
   constructor(props) {
     super(props);
 
@@ -25,6 +19,11 @@ class StoryForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+// FOR EDIT FORM
+  componentWillReceiveProps(nextProps) {
+    this.refreshFormType(nextProps);
   }
 
 // FOR EDIT FORM
@@ -50,13 +49,10 @@ class StoryForm extends React.Component {
     });
   }
 
-
-
-// DO I NEED A REFRESH FORM TYPE KINDA METHOD?
+// FOR EDIT FORM
   refreshFormType(nextProps) {
     if (nextProps.location.pathname === "/stories/new" &&
         this.props.location.pathname !== "/stories/new") {
-      // this.clearState();
       this.state.formType = "new";
     } else {
       if (nextProps.match.params.storyId &&
@@ -134,7 +130,7 @@ class StoryForm extends React.Component {
         <br />
 
         <button className="story-publish-button" onClick={this.handleSubmit}>
-          { (this.state.formType === 'edit') ? "Edit" : "Publish" }
+          { (this.state.formType === 'edit') ? "Update Story" : "Publish" }
         </button>
       </form>
     )
