@@ -14,6 +14,19 @@
  *= require_self
  */
 
+/* Possible scss structure */
+
+  /*// CSS Reset
+  @import "base/reset.scss";
+
+  // Core
+  @import "base/colors.scss";
+  @import "base/fonts.scss";
+
+  // Components
+  @import "components/*";
+  @import "base/layout.scss";*/
+
  body {
    color: #343336;
    font-family: 'Open Sans', sans-serif;

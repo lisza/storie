@@ -40,17 +40,20 @@
 }
 
 //************ ShowStory styles ****************************************
-.story {
+.story-wrapper {
   // border: 1px solid lightgrey;
   // border-radius: 5px;
   width: 60%;
   margin: 5% auto;
   padding: 10px;
+}
+
+.story {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   color: #5c5a5a;
 }
 
-.story * {
+.story-wrapper * {
   padding: 5px 0;
 }
 
@@ -70,6 +73,15 @@
   border-bottom: 1px solid lightgrey;
 }
 
+.story-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.story-info .edit-links * {
+  padding-left: 5px;
+}
 
 //************ StoryForm styles ****************************************
 .story-form {

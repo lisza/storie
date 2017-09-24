@@ -18,29 +18,34 @@ class ShowStory extends React.Component {
   }
 
   render() {
-    const { currentUser, story, fetchStory, deleteStory } = this.props;
+    const { currentUser, story} = this.props;
 
     console.log(this.props);
     if (!story) { return null };
 
+    const date = new Date(story.created_at);
+
     return (
-      <div>
+      <div className="story-wrapper">
         <section className="story">
           <h2>{story.title}</h2>
           <h3>{story.description}</h3>
           <p>{story.body}</p>
-          <Link to={`/users/${story.author.author_id}`} className="user-info-thumb">
+        </section>
+
+        <section className="story-info">
+          <Link className="user-info-thumb" to={`/users/${story.author.author_id}`}>
             <img className="user-image-small" src={story.author.author_image} />
             {story.author.author_name}
           </Link>
 
-          {(this.props.currentUser.id === this.props.story.author.author_id) ?
-            <div>
+          <div>{date.toDateString()}</div>
+
+          {(currentUser && this.props.currentUser.id === this.props.story.author.author_id) ?
+            <div className="edit-links">
               <Link to={`/stories/${this.props.story.id}/edit`}>Edit Story</Link>
               <button onClick={this.handleDelete}>Delete Story</button>
             </div> : null }
-
-
         </section>
       </div>
     )
