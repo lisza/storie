@@ -26,7 +26,7 @@ class ShowStory extends React.Component {
     const date = new Date(story.created_at);
 
     return (
-      <div className="story-wrapper">
+      <div className="main-content">
         <section className="story">
           <h2>{story.title}</h2>
           <h3>{story.description}</h3>
