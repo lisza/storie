@@ -5,6 +5,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import StoriesIndexContainer from './stories/stories_index_container';
 import StoryFormContainer from './stories/story_form_container';
 import ShowStoryContainer from './stories/show_story_container';
+import UserProfileContainer from './users/user_profile_container';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -21,6 +22,7 @@ const App = () => (
       <Route exact path="/stories/:storyId" component={ShowStoryContainer} />
       <ProtectedRoute path="/stories/:storyId/edit"
             component={ StoryFormContainer} formType="edit"/>
+      <Route path="/users/:userId" component={UserProfileContainer}/>
     </Switch>
   </section>
 );

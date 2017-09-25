@@ -2,7 +2,7 @@ export const createStory = (story) => (
   $.ajax({
     method: 'POST',
     url: 'api/stories',
-    data: {story} 
+    data: {story}
   })
 );
 
@@ -32,5 +32,13 @@ export const deleteStory = (id) => (
   $.ajax({
     method: 'DELETE',
     url: `api/stories/${id}`
+  })
+);
+
+export const fetchAuthoredStories = (author_id) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/stories',
+    data: { author_id }
   })
 );

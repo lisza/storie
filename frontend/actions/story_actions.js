@@ -4,6 +4,8 @@ import { receiveErrors } from './error_actions';
 export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
+// export const FETCH_USER_STORIES = 'FETCH_USER_STORIES';
+// do i need this?
 
 export const fetchStories = () => (dispatch) => (
   ApiUtil.fetchStories().then(stories => (
@@ -17,7 +19,8 @@ export const fetchStory = (id) => (dispatch) => (
   ApiUtil.fetchStory(id).then(story => (
     dispatch(receiveStory(story)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON)))
+    dispatch(receiveErrors(errors.responseJSON))
+  )
   ))
 );
 
@@ -33,7 +36,8 @@ export const updateStory = (story) => (dispatch) => (
   ApiUtil.updateStory(story).then(newStory => (
     dispatch(receiveStory(newStory)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON)))
+    dispatch(receiveErrors(errors.responseJSON))
+  )
   ))
 );
 
@@ -41,7 +45,18 @@ export const deleteStory = (story) => (dispatch) => (
   ApiUtil.deleteStory(story).then(story => (
     dispatch(removeStory(story)
   ), errors => (
-    dispatch(receiveErrors(errors.responseJSON)))
+    dispatch(receiveErrors(errors.responseJSON))
+  )
+  ))
+);
+
+// new for user profile stories feed
+export const fetchAuthoredStories = (id) => (dispatch) => (
+  ApiUtil.fetchAuthoredStories(id).then((stories) => (
+    dispatch(receiveStories(stories)
+  ), errors => (
+    dispatch(receiveErrors(errors.responseJSON))
+  )
   ))
 );
 

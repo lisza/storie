@@ -14,8 +14,14 @@ class Api::StoriesController < ApplicationController
   end
 
   def index
-    @stories = Story.all
+    # TO FETCH ALL AUTHORED STORIES 
+    if params[:author_id]
+      @stories = Story.where(author_id: params[:author_id])
+    else
+      @stories = Story.all
+    end
   end
+
 
   def show
     @story = Story.find(params[:id])

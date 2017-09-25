@@ -1,0 +1,38 @@
+
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  padding: 12px;
+}
+
+.user-profile-feed {
+  margin-top: 30px;
+  // border: 1px solid lightgrey;
+}
+
+.user-profile-feed h2 {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px;
+}
+
+.user-text {
+}
+
+.user-profile img {
+  float: right;
+}
+
+.user-profile h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  padding-bottom: 8px;
+}
+
+.user-image-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  // border: 1px solid lightgrey;
+}
