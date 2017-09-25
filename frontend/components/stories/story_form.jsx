@@ -11,11 +11,10 @@ class StoryForm extends React.Component {
       title: "",
       description: "",
       body: "",
-      image_url: "",
-      formType: ""
+      image_url: ""
     };
 
-    this.formType();
+    this.formType(); // determines the formType
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);

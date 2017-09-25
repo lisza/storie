@@ -16,9 +16,9 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={StoriesIndexContainer} />
-      <ProtectedRoute path="/stories/new" component={StoryFormContainer} />
-      <Route path="/stories/:storyId" component={ShowStoryContainer} />
-
+      <ProtectedRoute path="/stories/new"
+            component={StoryFormContainer} formType="new" />
+      <Route exact path="/stories/:storyId" component={ShowStoryContainer} />
       <ProtectedRoute path="/stories/:storyId/edit"
             component={ StoryFormContainer} formType="edit"/>
     </Switch>

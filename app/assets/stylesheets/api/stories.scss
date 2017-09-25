@@ -85,8 +85,8 @@
 
 //************ StoryForm styles ****************************************
 .story-form {
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+  // border: 1px solid lightgrey;
+  // border-radius: 5px;
   width: 60%;
   margin: 5% auto;
   padding: 10px;
@@ -95,6 +95,15 @@
 .story-form * {
   margin: 5px;
   padding: 5px;
+  // border: none;
+}
+
+.story-form .session-errors, .story-form ul {
+  padding: 0;
+}
+
+.story-form ul {
+  margin-left: 0;
 }
 
 // greenish color for backgorund #e2f9e8;

@@ -41,7 +41,7 @@ class ShowStory extends React.Component {
 
           <div>{date.toDateString()}</div>
 
-          {(currentUser && this.props.currentUser.id === this.props.story.author.author_id) ?
+          {(currentUser && (this.props.currentUser.id === this.props.story.author.author_id)) ?
             <div className="edit-links">
               <Link to={`/stories/${this.props.story.id}/edit`}>Edit Story</Link>
               <button onClick={this.handleDelete}>Delete Story</button>
