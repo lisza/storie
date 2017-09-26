@@ -8,13 +8,42 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_save :set_default_image
 
-  attr_reader :password
-
-  # Associations here once I have my other db tables
   has_many :authored_stories,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :Story
+
+  has_many :active_follows,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+  has_many :following,
+    through: :active_follows,
+    source: :followed
+
+  has_many :passive_follows,
+    primary_key: :id,
+    foreign_key: :followed_id,
+    class_name: :Follow
+
+  has_many :followers,
+    through: :passive_follows,
+    source: :follower
+
+  attr_reader :password
+
+  def follow(other_user)
+    self.active_follows.create(followed_id: other_user.id)
+  end
+
+  def unfollow(other_user)
+      self.active_follows.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    self.following.include?(other_user)
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

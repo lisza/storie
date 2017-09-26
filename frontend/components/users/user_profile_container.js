@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchUser, followUser, unfollowUser } from '../../actions/user_actions';
 import { fetchAuthoredStories } from '../../actions/story_actions';
 import UserProfile from './user_profile';
 
@@ -7,15 +7,18 @@ const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
     user: state.user,
-    authoredStories: Object.keys(state.stories).map(id => state.stories[id])
+    authoredStories: Object.keys(state.stories).map(id => state.stories[id]),
+    following: state.user.following,
+    followers: state.user.followers,
+    followedByCurrentUser: state.user.followed_by_current_user
   });
 };
-// authoredStories: state.user.authoredStories
-// authoredStories: Object.keys(state.stories).map(id => state.stories[id])
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
-  fetchAuthoredStories: id => dispatch(fetchAuthoredStories(id)),
+  fetchAuthoredStories: (id) => dispatch(fetchAuthoredStories(id)),
+  followUser: (id) => dispatch(followUser(id)),
+  unfollowUser: (id) => dispatch(unfollowUser(id))
 });
 
 export default connect(
