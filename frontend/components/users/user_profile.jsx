@@ -35,6 +35,7 @@ class UserProfile extends React.Component {
       return (
         <div>Loading...</div>
       )
+      
     }
     return(
       <div className="main-content">
@@ -56,8 +57,6 @@ class UserProfile extends React.Component {
           </section>
         </section>
 
-
-
         <section className="user-profile-feed">
           <h2>{user.username}s stories</h2>
           {authoredStories.map(story => (
@@ -66,7 +65,6 @@ class UserProfile extends React.Component {
           }
         </section>
       </div>
-
     );
   }
 }
