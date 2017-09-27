@@ -25,7 +25,11 @@ class Api::CommentsController < ApplicationController
 
   # returns comments for a story
   def index
-    @comments = Comment.all
+    if params[:story_id]
+      @comments = Comment.where(story_id: params[:story_id])
+    else
+      @comments = Comment.all
+    end
   end
 
   def show

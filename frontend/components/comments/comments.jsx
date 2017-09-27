@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentItem from './comment_item';
+import CommentFormContainer from './comment_form_container';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class Comments extends React.Component {
     return (
       <section className="comments">
         <h1>Comments</h1>
+
+        {this.props.currentUser ?
+          <CommentFormContainer storyId={this.props.storyId}/> : null }
+
         {this.props.comments.map(comment => (
           <CommentItem
             comment={comment}

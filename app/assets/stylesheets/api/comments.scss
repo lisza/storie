@@ -7,8 +7,9 @@
   font-style: 700;
 }
 
+/************************* comment-item styles ***********************/
+
 .comment-item {
-  // border: 1px solid lightgrey;
   border: 1px solid rgba(0,0,0,.09);
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
   border-radius: 3px;
@@ -22,7 +23,7 @@
 }
 
 .comment-item p {
-  padding: 10px 0;
+  padding: 15px;
   font-size: 16px;
   color: rgba(0,0,0,.8); //Mediums comment text color...
   width: 100%;
@@ -30,3 +31,33 @@
 
 .comment-item button {
   color: orange;}
+
+/************************* comment-form styles ***********************/
+
+.comment-form {
+  border: 1px solid rgba(0,0,0,.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border-radius: 3px;
+  padding: 20px;
+  min-height: 40px;
+  margin: 20px 0 30px 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.comment-form img {
+  align-self: flex-start;
+  padding-right: 15px;
+}
+
+.comment-form textarea {
+  flex: 1;
+  resize: none;
+}
+
+.comment-form-button {
+  align-self: flex-end;
+  color: #FF3399;
+}

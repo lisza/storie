@@ -14,7 +14,7 @@ class CommentItem extends React.Component {
   }
 
   render() {
-    const comment = this.props.comment;
+    const { comment, currentUser } = this.props;
 
     return (
       <div className="comment-item">
@@ -23,7 +23,7 @@ class CommentItem extends React.Component {
           {comment.author.username}
         </Link>
 
-        { this.props.currentUser.id === comment.author.id ?
+        { (currentUser && (currentUser.id === comment.author.id)) ?
          <button onClick={this.handleDelete}>Delete</button> :
          null }
 
