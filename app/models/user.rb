@@ -13,6 +13,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Story
 
+  has_many :authored_comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Comment
+
   has_many :active_follows,
     primary_key: :id,
     foreign_key: :follower_id,

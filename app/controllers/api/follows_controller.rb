@@ -1,4 +1,5 @@
 class Api::FollowsController < ApplicationController
+  before_action :require_login, only: [:create, :destroy]
 
   def create
     puts params

@@ -5,8 +5,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-//testing
+// for console testing
 import { fetchStory, updateStory } from './util/story_api_util';
+import { createComment, fetchComments } from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -18,9 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  // for console testing
   window.fetchStory = fetchStory;
   window.updateStory = updateStory;
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.createComment = createComment;
+  window.fetchComments = fetchComments;
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

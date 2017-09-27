@@ -14,10 +14,11 @@ class Api::StoriesController < ApplicationController
   end
 
   def index
-    # TO FETCH ALL AUTHORED STORIES 
+    # TO FETCH ALL AUTHORED STORIES
     if params[:author_id]
       @stories = Story.where(author_id: params[:author_id])
     else
+      # FETCH ALL STORIES
       @stories = Story.all
     end
   end
@@ -27,8 +28,6 @@ class Api::StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
-  # The might be a better way to check if story belongs to current_user...
-  # Do we need to check at all, or is this handled by frontend protected routes?
   def update
     @story = Story.find(params[:id])
 

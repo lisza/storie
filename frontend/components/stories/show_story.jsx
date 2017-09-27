@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentsContainer from '../comments/comments_container';
 
 class ShowStory extends React.Component {
   constructor(props) {
@@ -47,6 +48,8 @@ class ShowStory extends React.Component {
               <button onClick={this.handleDelete}>Delete Story</button>
             </div> : null }
         </section>
+
+        <CommentsContainer storyId={this.props.story.id}/>
       </div>
     )
   }
