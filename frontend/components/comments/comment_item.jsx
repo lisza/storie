@@ -18,7 +18,7 @@ class CommentItem extends React.Component {
 
     return (
       <div className="comment-item">
-        <Link className="user-info-thumb" to={`/users/${comment.author.author_id}`}>
+        <Link className="user-info-thumb" to={`/users/${comment.author.id}`}>
           <img className="user-image-small" src={comment.author.image_url} />
           {comment.author.username}
         </Link>

@@ -43,8 +43,8 @@ class ShowStory extends React.Component {
 
           {(currentUser && (this.props.currentUser.id === this.props.story.author.author_id)) ?
             <div className="edit-links">
-              <Link to={`/stories/${this.props.story.id}/edit`}>Edit Story</Link>
-              <button onClick={this.handleDelete}>Delete Story</button>
+              <Link to={`/stories/${this.props.story.id}/edit`}>Edit</Link>
+              <button onClick={this.handleDelete}>Delete</button>
             </div> : null }
         </section>
 
