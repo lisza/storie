@@ -48,7 +48,9 @@
 
 .story {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  color: #5c5a5a;
+  // color: #5c5a5a;
+  color: rgba(0,0,0,.8); //Mediums color
+  line-height: 1.4;
 }
 
 .story-wrapper * {

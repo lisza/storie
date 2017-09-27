@@ -21,7 +21,6 @@ class ShowStory extends React.Component {
   render() {
     const { currentUser, story} = this.props;
 
-    console.log(this.props);
     if (!story) { return null };
 
     const date = new Date(story.created_at);

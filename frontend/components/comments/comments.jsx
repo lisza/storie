@@ -7,22 +7,22 @@ class Comments extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchComments()
+    this.props.fetchComments(this.props.storyId);
   }
 
   render() {
-
-    // Do I need this? Maybe.
-    // if (!this.props.comments) {
-    //   return (
-    //     <div>Loading...</div>
-    //   )}
+    if (!this.props.comments) return null;
 
     return (
       <section className="comments">
         <h1>Comments</h1>
         {this.props.comments.map(comment => (
-          <CommentItem comment={comment} key={`comment-${comment.id}`} />
+          <CommentItem
+            comment={comment}
+            key={`comment-${comment.id}`}
+            currentUser={this.props.currentUser}
+            deleteComment={this.props.deleteComment}
+           />
         ))}
       </section>
     );
@@ -30,7 +30,3 @@ class Comments extends React.Component {
 }
 
 export default Comments;
-
-// <li>
-//   {comment.author.username}: {comment.body}
-// </li>

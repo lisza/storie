@@ -3,18 +3,12 @@ import Comments from './comments';
 import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("OWN PROPS: ", ownProps);
-  console.log("STATE: ", state);
-  // debugger;
-
   return ({
     currentUser: state.session.currentUser,
-    comments: state.stories[ownProps.storyId].comments,
+    comments: Object.values(state.comments),
     storyId: ownProps.storyId
   })
 };
-
-// storyId: ownProps.storyId
 
 const mapDispatchToProps = (dispatch) =>({
   fetchComments: (storyId) => dispatch(fetchComments(storyId)),

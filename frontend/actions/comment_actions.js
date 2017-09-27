@@ -29,9 +29,9 @@ export const createComment = (storyId, comment) => (dispatch) => (
   ))
 );
 
-export const deleteComment = (comment) => (dispatch) => (
-  ApiUtil.deleteComment(comment).then(newComment => (
-    dispatch(receiveComment(newComment))
+export const deleteComment = (id) => (dispatch) => (
+  ApiUtil.deleteComment(id).then(newComment => (
+    dispatch(removeComment(newComment))
   ), errors => (
     dispatch(receiveErrors(errors.responseJSON))
   ))
@@ -47,7 +47,7 @@ export const receiveComment = (comment) => ({
   comment
 });
 
-export const removeComments = (comment) => ({
-  type: RECEIVE_COMMENT,
+export const removeComment = (comment) => ({
+  type: REMOVE_COMMENT,
   comment
 });
