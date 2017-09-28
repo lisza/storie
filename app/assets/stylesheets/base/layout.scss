@@ -7,6 +7,10 @@
     min-width: 400px;
     margin: 8%  auto;
   }
+
+  .navbar * {
+    padding: 0 5px;
+  }
 }
 
 @media only screen and (max-width:499px){
@@ -22,8 +26,12 @@
     display: block;
   }
 
+  .navbar {
+    padding: 5% 0 3% 1%;
+  }
+
   .navbar * {
-    padding: 0;
+    padding-left: 3px;
   }
 
   .story-form {

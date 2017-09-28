@@ -21,7 +21,7 @@ class Comments extends React.Component {
         {this.props.currentUser ?
           <CommentFormContainer storyId={this.props.storyId}/> : null}
 
-        {this.props.comments.map(comment => (
+        {this.props.comments.reverse().map(comment => (
           <CommentItem
             comment={comment}
             key={`comment-${comment.id}`}

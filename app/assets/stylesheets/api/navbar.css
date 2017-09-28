@@ -12,6 +12,6 @@
   align-items: center;
 }
 
-.navbar * {
-  padding: 0 5px;
+.session-links button:hover {
+  color: orange;
 }
