@@ -4,10 +4,10 @@
 
 //************ StoryIndex styles ***************************************
 .stories-index {
-  width: 100%;
+  width: 70%;
   margin: 5% auto;
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 
 //************ StoryIndexThumb styles **********************************
@@ -16,7 +16,7 @@
   flex-basis: 360px;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  height: 250px;
+  height: 220px;
   padding: 2%;
   margin: 1%;
   position: relative;
