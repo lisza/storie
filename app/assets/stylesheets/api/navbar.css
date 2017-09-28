@@ -13,18 +13,6 @@
   align-items: center;
 }
 
-.user-image-small {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-}
-
-.user-info-thumb {
-  display: flex;
-  align-items: center;
-  margin-right: 5px;
-}
-
 .navbar * {
   padding: 0 5px;
 }

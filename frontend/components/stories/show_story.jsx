@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Linkify from 'react-linkify';
 import CommentsContainer from '../comments/comments_container';
+import UserThumb from '../users/user_thumb'
 
 class ShowStory extends React.Component {
   constructor(props) {
@@ -23,23 +25,25 @@ class ShowStory extends React.Component {
 
     if (!story) { return null };
 
-    const date = new Date(story.created_at);
-
     return (
       <div className="main-content">
         <section className="story">
           <h2>{story.title}</h2>
           <h3>{story.description}</h3>
-          <p>{story.body}</p>
+
+          <Linkify>
+            <p>{story.body}</p>
+          </Linkify>
+
         </section>
 
         <section className="story-info">
-          <Link className="user-info-thumb" to={`/users/${story.author.author_id}`}>
-            <img className="user-image-small" src={story.author.author_image} />
-            {story.author.author_name}
-          </Link>
 
-          <div>{date.toDateString()}</div>
+          <UserThumb
+            userId={story.author.author_id}
+            username={story.author.author_name}
+            userImage={story.author.author_image}
+            postDate={story.created_at} />
 
           {(currentUser && (this.props.currentUser.id === this.props.story.author.author_id)) ?
             <div className="edit-links">
@@ -52,7 +56,6 @@ class ShowStory extends React.Component {
       </div>
     )
   }
-
 }
 
 export default ShowStory;

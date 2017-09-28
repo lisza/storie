@@ -15,7 +15,7 @@ class Navbar extends React.Component {
       <nav>
         <Link onClick={this.clearErrors} to="/stories/new">Write a story</Link>
 
-        <Link className="user-info-thumb" to={`/users/${currentUser.id}`}>
+        <Link className="user-thumb" to={`/users/${currentUser.id}`}>
           Hello, {currentUser.username}!
           <img
             className="user-image-small"

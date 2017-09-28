@@ -10,7 +10,6 @@ const mapStateToProps = (state, { match }) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchStory: (id) => dispatch(fetchStory(id)),
   deleteStory: (id) => dispatch(deleteStory(id))
-  // updateStory: (story) => dispatch(updateStory(story)),
 });
 
 export default connect(

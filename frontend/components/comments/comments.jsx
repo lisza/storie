@@ -16,10 +16,10 @@ class Comments extends React.Component {
 
     return (
       <section className="comments">
-        <h1>Comments</h1>
+        {this.props.comments.length === 0 ? <h1>No Responses Yet</h1> : <h1>Responses</h1>}
 
         {this.props.currentUser ?
-          <CommentFormContainer storyId={this.props.storyId}/> : null }
+          <CommentFormContainer storyId={this.props.storyId}/> : null}
 
         {this.props.comments.map(comment => (
           <CommentItem

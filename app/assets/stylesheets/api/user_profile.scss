@@ -1,4 +1,31 @@
+//*********************** User Thumb styles ****************************
+.user-image-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
 
+.user-thumb {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.user-thumb-name {
+  font-weight: bold;
+}
+
+.user-thumb div {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.user-thumb-date {
+  font-size: smaller;
+  color: grey;
+}
+
+//********************** User Profile styles ***************************
 .user-profile {
   display: flex;
   flex-wrap: wrap;

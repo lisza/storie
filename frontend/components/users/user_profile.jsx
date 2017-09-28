@@ -29,13 +29,13 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { user, authoredStories, following, followers, followedByCurrentUser } = this.props;
+    const { currentUser, user, authoredStories, following, followers, followedByCurrentUser } = this.props;
 
     if (user.id === null){
       return (
         <div>Loading...</div>
       )
-      
+
     }
     return(
       <div className="main-content">
@@ -49,11 +49,15 @@ class UserProfile extends React.Component {
           <section className="follows">
             <p>
               <span>{following.length} Following</span>
-              <span>{followers.length} Followers</span>
+              <span>{followers.length} {followers.length === 1 ? "Follower" : "Followers"}</span>
             </p>
-            <button onClick={this.toggleFollow}>
-              {followedByCurrentUser ? "Unfollow" : "Follow"}
-            </button>
+
+            {currentUser.id === user.id ? null :
+              <button onClick={this.toggleFollow}>
+                {followedByCurrentUser ? "Unfollow" : "Follow"}
+              </button>
+            }
+            
           </section>
         </section>
 

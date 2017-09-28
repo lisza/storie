@@ -101,6 +101,7 @@ class SessionForm extends React.Component {
 
         <Modal
           className="session-form-modal"
+          overlayClassName="session-form-modal-overlay"
           contentLabel="Session Modal"
           isOpen={this.state.showModal}
           onRequestClose={this.handleCloseModal}

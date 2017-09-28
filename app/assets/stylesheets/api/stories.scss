@@ -10,10 +10,6 @@
   flex-wrap: wrap-reverse;
 }
 
-// TODO How to make this container have a height that corresponds to
-// the content height? This is done with .stories-index:after { clear: both }
-// but I started using flexbox, and it handles that automatically, sweet :)
-
 //************ StoryIndexThumb styles **********************************
 .story-thumb-box {
   flex-grow: 1;
@@ -32,15 +28,13 @@
   margin: 5px 0;
 }
 
-.story-thumb-box .user-info-thumb {
+.story-thumb-box .user-thumb {
   position: absolute;
   bottom: 5%;
 }
 
 //************ ShowStory styles ****************************************
 .story-wrapper {
-  // border: 1px solid lightgrey;
-  // border-radius: 5px;
   width: 60%;
   margin: 5% auto;
   padding: 10px;
@@ -48,7 +42,6 @@
 
 .story {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  // color: #5c5a5a;
   color: rgba(0,0,0,.8); //Mediums color
   line-height: 1.4;
 }
@@ -63,7 +56,8 @@
 
 .story h3 {
   font-size: 20px;
-  // border-bottom: 1px solid pink;
+  color: rgba(0,0,0,.54);
+  margin-bottom: 12px;
 }
 
 .story p {
@@ -71,12 +65,20 @@
   margin-top: 10px;
   padding-bottom: 30px;
   border-bottom: 1px solid lightgrey;
+  // white-space: pre-line honors line breaks coming form text area input
+  white-space: pre-line;
+}
+
+.story p a, .comment-item p a {
+  // text-decoration: underline;
+  background: honeydew;
 }
 
 .story-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
 }
 
 .story-info .edit-links * {
@@ -87,11 +89,8 @@
   color: orange;
 }
 
-
 //************ StoryForm styles ****************************************
 .story-form {
-  // border: 1px solid lightgrey;
-  // border-radius: 5px;
   width: 60%;
   margin: 5% auto;
   padding: 10px;
@@ -100,7 +99,6 @@
 .story-form * {
   margin: 5px;
   padding: 5px;
-  // border: none;
 }
 
 .story-form .session-errors, .story-form ul {
