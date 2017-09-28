@@ -23,7 +23,7 @@ class CommentForm extends React.Component {
     };
   }
 
-  // Example: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
+  // scrollHeight example: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
   resizeForm(event) {
     const form = event.currentTarget;
     form.style.height = "40px";

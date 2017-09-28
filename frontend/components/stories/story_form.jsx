@@ -103,35 +103,36 @@ class StoryForm extends React.Component {
   render() {
 
     return (
-      <form className="story-form">
+      <div className="main-content">
+        <form className="story-form">
+          <div className="session-errors">{this.renderErrors()}</div>
 
-        <div className="session-errors">{this.renderErrors()}</div>
+          <input className="story-form-input-title"
+            type="text"
+            value={this.state.title}
+            placeholder="Title"
+            onChange={this.handleChange('title')}
+            required />
+          <br />
+          <input className="story-form-input-description"
+            type="text"
+            value={this.state.description}
+            placeholder="Description"
+            onChange={this.handleChange('description')}
+            required />
+          <br />
+          <textarea className="story-form-textarea-body"
+            value={this.state.body}
+            placeholder="Write your story..."
+            onChange={this.handleChange("body")}
+            required />
+          <br />
 
-        <input className="story-form-input-title"
-          type="text"
-          value={this.state.title}
-          placeholder="Title"
-          onChange={this.handleChange('title')}
-          required />
-        <br />
-        <input className="story-form-input-description"
-          type="text"
-          value={this.state.description}
-          placeholder="Description"
-          onChange={this.handleChange('description')}
-          required />
-        <br />
-        <textarea className="story-form-textarea-body"
-          value={this.state.body}
-          placeholder="Write your story..."
-          onChange={this.handleChange("body")}
-          required />
-        <br />
-
-        <button className="story-publish-button" onClick={this.handleSubmit}>
-          { (this.state.formType === 'edit') ? "Update Story" : "Publish" }
-        </button>
-      </form>
+          <button className="story-publish-button" onClick={this.handleSubmit}>
+            { (this.state.formType === 'edit') ? "Update Story" : "Publish" }
+          </button>
+        </form>
+      </div>  
     )
   }
 }

@@ -4,7 +4,7 @@
 
 //************ StoryIndex styles ***************************************
 .stories-index {
-  width: 80%;
+  width: 100%;
   margin: 5% auto;
   display: flex;
   flex-wrap: wrap-reverse;
@@ -42,7 +42,7 @@
 
 .story {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  color: rgba(0,0,0,.8); //Mediums color
+  color: rgba(0,0,0,.8);
   line-height: 1.4;
 }
 
@@ -72,6 +72,7 @@
 .story p a, .comment-item p a {
   // text-decoration: underline;
   background: honeydew;
+  font-size: smaller;
 }
 
 .story-info {
@@ -91,7 +92,7 @@
 
 //************ StoryForm styles ****************************************
 .story-form {
-  width: 60%;
+  width: 100%;
   margin: 5% auto;
   padding: 10px;
 }

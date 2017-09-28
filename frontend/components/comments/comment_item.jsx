@@ -20,7 +20,6 @@ class CommentItem extends React.Component {
 
     return (
       <div className="comment-item">
-
         <UserThumb
           userId={comment.author.id}
           username={comment.author.username}
@@ -31,10 +30,7 @@ class CommentItem extends React.Component {
          <button onClick={this.handleDelete}>Delete</button> :
          null }
 
-         <p>
-           <Linkify>{comment.body}</Linkify>
-         </p>
-
+         <p><Linkify>{comment.body}</Linkify></p>
       </div>
     );
   }

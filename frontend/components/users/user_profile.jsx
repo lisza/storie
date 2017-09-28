@@ -31,12 +31,8 @@ class UserProfile extends React.Component {
   render() {
     const { currentUser, user, authoredStories, following, followers, followedByCurrentUser } = this.props;
 
-    if (user.id === null){
-      return (
-        <div>Loading...</div>
-      )
+    if (user.id === null) return (<div>Loading...</div>);
 
-    }
     return(
       <div className="main-content">
         <section className="user-profile">
@@ -52,17 +48,21 @@ class UserProfile extends React.Component {
               <span>{followers.length} {followers.length === 1 ? "Follower" : "Followers"}</span>
             </p>
 
-            {currentUser.id === user.id ? null :
+            {currentUser && (currentUser.id === user.id) ? null :
               <button onClick={this.toggleFollow}>
                 {followedByCurrentUser ? "Unfollow" : "Follow"}
               </button>
             }
-            
+
           </section>
         </section>
 
         <section className="user-profile-feed">
-          <h2>{user.username}s stories</h2>
+          {authoredStories.length === 0 ?
+            <h2>{user.username} hasn't published any stories.</h2>
+            : <h2>{user.username}s stories</h2>
+          }
+
           {authoredStories.map(story => (
             <StoryIndexThumb story={story} key={`story-thumb-${story.id}`} />)
             )
