@@ -28,9 +28,14 @@
 }
 
 .story-thumb h1 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  margin: 5px 0 8px 0;
+  margin: 5px 0 12px 0;
+}
+
+.story-thumb p, .story-thumb h3 {
+  font-size: 16px;
+  color: rgba(0,0,0,.7);
 }
 
 .story-thumb .user-thumb {
