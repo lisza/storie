@@ -14,7 +14,7 @@ Storie is a minimalist site to write, read, and comment on stories. It is somewh
 ### Stories
 Storie is text focused. It is foregoing post header images as they often only marginally related to the writing. No images for the sake of having an image. The same goes for likes. They say more about marketing than quality, and popular does not equal good.
 
-![Storie main page and login](docs/readme_images/main_page_login_medium.gif)
+![Storie main page and login](docs/readme_images/main_page_login.gif)
 
 #### Comments
 Story and Comment forms auto expand and contract with text size, so users always have a full view of what they’ve typed.
@@ -23,6 +23,8 @@ Story and Comment forms auto expand and contract with text size, so users always
 
 #### Story Write & Edit
 The background color of the Story Writer is a light yellow green, which people tend to find to be more eye friendly than white. Think legal pads and the beautiful National Brand notebooks.
+
+![Storie write](docs/readme_images/write_story.png) ![Storie edit](docs/readme_images/edit_story.png)
 
 #### Formatting links & breaks
 * In an effort to focus on text over formatting, no text formatting is provided at this point. However, web links are parsed and rendered with the help of [Linkify](https://github.com/tasti/react-linkify/), a simple match and parse library. Story posts also honor paragraphs and line breaks, with the help of modern CSS.
