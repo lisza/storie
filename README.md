@@ -21,13 +21,20 @@ Story and Comment forms auto expand and contract with text size, so users always
 
 ![Storie comments demo](docs/readme_images/comments.gif)
 
+#### Follows
+Users can follow and unfollow others. The button toggles neatly between the two.
+
+![Storie follows](docs/readme_images/follows.gif)
+
 #### Story Write & Edit
 The background color of the Story Writer is a light yellow green, which people tend to find to be more eye friendly than white. Think legal pads and the beautiful National Brand notebooks.
 
 ![Storie write](docs/readme_images/write_story_small.png) ![Storie edit](docs/readme_images/edit_story_small.png)
 
 #### Formatting links & breaks
-* In an effort to have writers focus on text over formatting, bolding, italics, colors, and the like aren't provided at this point. However, web links are parsed and rendered with the help of [Linkify](https://github.com/tasti/react-linkify/), a simple match and parse library. Story posts also honor paragraphs and line breaks, with the help of modern CSS `white-space: pre-line;`
+In an effort to have writers focus on text over formatting, bolding, italics, colors, and the like aren't provided at this point. However, web links are parsed and rendered with the help of [Linkify](https://github.com/tasti/react-linkify/), a simple match and parse library.
+
+Story posts also honor paragraphs and line breaks, with the help of modern CSS `white-space: pre-line;`
 
 ![Storie links demo](docs/readme_images/links.gif)
 
