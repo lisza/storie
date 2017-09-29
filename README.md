@@ -17,7 +17,9 @@ Storie is text focused. It is foregoing post header images as they often only ma
 ![Storie main page and login](docs/readme_images/main_page_login.gif)
 
 #### Comments
-Story and Comment forms auto expand and contract with text size, so users always have a full view of what they’ve typed. SCREENGIF HERE!
+Story and Comment forms auto expand and contract with text size, so users always have a full view of what they’ve typed.
+
+![Storie comments demo](docs/readme_images/comments.gif)
 
 #### Story Write & Edit
 The background color of the Story Writer is a light yellow green, which people tend to find to be more eye friendly than white. Think legal pads and the beautiful National Brand notebooks.
