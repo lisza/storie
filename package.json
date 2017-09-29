@@ -1,6 +1,13 @@
 {
   "name": "storie",
   "private": true,
+  "description": "Storie is a minimalist site to write, read, and comment on stories. It is built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails in the backend.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
 
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -21,13 +28,7 @@
   "devDependencies": {
     "redux-logger": "^3.0.6",
   },
-  "description": "Storie is a minimalist site to write, read, and comment on stories. It is built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails in the backend.",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+
   "engines": {
     "node": "8.4.0",
     "npm": "5.3.0"
