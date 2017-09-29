@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
     // { this.state.loginForm ? null : this.renderEmailForm() }
     // I'd have to write renderEmailForm of course.
     return (
-      <nav>
+      <div>
 
         <nav className="session-links">
           <button onClick={this.handleOpenModal.bind(this, true)} >Write a story</button>
@@ -141,7 +141,7 @@ class SessionForm extends React.Component {
 
           </form>
         </Modal>
-      </nav>
+      </div>
     );
   }
 }

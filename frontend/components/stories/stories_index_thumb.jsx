@@ -9,7 +9,7 @@ const StoryIndexThumb = ({ story }) => (
       <Link to={`/stories/${story.id}`}>
         <h1>{story.title}</h1>
         {story.description ? <h3>{story.description}</h3>
-          : <p>{story.body.slice(0,300)}...</p>}
+      : <p>{story.body.slice(0,200)}...</p>}
       </Link>
 
       <UserThumb
