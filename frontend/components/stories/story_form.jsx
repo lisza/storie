@@ -7,7 +7,7 @@ class StoryForm extends React.Component {
     super(props);
 
     this.state = {
-      id: undefined,
+      // id: undefined,
       title: "",
       description: "",
       body: "",
@@ -50,8 +50,9 @@ class StoryForm extends React.Component {
 
 // FOR EDIT FORM
   refreshFormType(nextProps) {
-    if (nextProps.location.pathname === "/stories/new" &&
-        this.props.location.pathname !== "/stories/new") {
+    // nextProps.location.pathname === "/stories/new" &&
+    if (
+        this.props.location.pathname === "/stories/new") {
       this.state.formType = "new";
     } else {
       if (nextProps.match.params.storyId &&
@@ -63,14 +64,10 @@ class StoryForm extends React.Component {
     }
   }
 
-  handleChange(field) {
-    return (event) => this.setState({ [field]: event.target.value });
-  }
-
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log("THIS.PROPS: ", this.props);
+    console.log("HANDLE SUBMIT*****THIS.PROPS: ", this.props);
 
     // FOR NEW FORM
     if (this.state.formType === "new") {
@@ -78,14 +75,26 @@ class StoryForm extends React.Component {
         .then(({ story }) => (
           this.props.history.push(`/stories/${story.id}`)
       ));
-    } else {
+    } else if (this.state.formType === "edit") {
       // FOR EDIT FORM
       this.props.updateStory(this.state)
         .then(() => {
-          console.log("INSIDE OF THEN LOG OF PROPS: ", this.props);
           this.props.history.push(`/stories/${this.props.story.id}`)
         });
     }
+  }
+
+  handleChange(field) {
+    return (event) => {
+      this.setState({ [field]: event.target.value });
+      this.resizeForm(event);
+    }
+  }
+
+  resizeForm(event) {
+    const form = event.currentTarget;
+    form.style.height = "40px";
+    form.style.height = (form.scrollHeight) + "px";
   }
 
   renderErrors() {
@@ -132,7 +141,7 @@ class StoryForm extends React.Component {
             { (this.state.formType === 'edit') ? "Update Story" : "Publish" }
           </button>
         </form>
-      </div>  
+      </div>
     )
   }
 }
