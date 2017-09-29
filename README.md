@@ -27,10 +27,13 @@ The background color of the Story Writer is a light yellow green, which people t
 ![Storie write](docs/readme_images/write_story_small.png) ![Storie edit](docs/readme_images/edit_story_small.png)
 
 #### Formatting links & breaks
-* In an effort to focus on text over formatting, no text formatting is provided at this point. However, web links are parsed and rendered with the help of [Linkify](https://github.com/tasti/react-linkify/), a simple match and parse library. Story posts also honor paragraphs and line breaks, with the help of modern CSS.
-* Instead of implementing more features, the idea of the site was to be simple and working, smooth and bug free.
+* In an effort to have writers focus on text over formatting, bolding, italics, colors, and the like aren't provided at this point. However, web links are parsed and rendered with the help of [Linkify](https://github.com/tasti/react-linkify/), a simple match and parse library. Story posts also honor paragraphs and line breaks, with the help of modern CSS `white-space: pre-line;`
+
+![Storie links demo](docs/readme_images/links.gif)
+
+Instead of being feature heavy, the idea of the site was to be simple and working, smooth and bug free.
 
 ## Future Features
 * At least three privacy settings: Users should be able to post publicly, friends only, and privately.
-* A full wysiwyg text editor for the “write story” form. I’d like to keep it simple, but anticipate users' desire for adding inline images to illustrate concepts, or convey moods, or simply share personal photos or art.
+* A limited wysiwyg text editor for the “write story” form. I’d like to keep it simple, but anticipate users' desire for adding inline images to illustrate concepts, or convey moods, or simply share personal photos or art.
 * Profile customization, if desired by users.
