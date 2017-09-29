@@ -11,31 +11,31 @@
 }
 
 //************ StoryIndexThumb styles **********************************
-.story-thumb-box {
+.story-thumb {
   flex-grow: 1;
   flex-basis: 360px;
   border: 1px solid lightgrey;
   border-radius: 3px;
   height: 250px;
-  padding: 2%;
+  padding: 3%;
   margin: 1%;
   position: relative;
 }
 
-.story-thumb-box:hover {
+.story-thumb:hover {
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
   border: 1px solid rgba(0,0,0,.09);
 }
 
-.story-thumb-box h1 {
+.story-thumb h1 {
   font-size: 20px;
   font-weight: 700;
-  margin: 5px 0;
+  margin: 5px 0 8px 0;
 }
 
-.story-thumb-box .user-thumb {
+.story-thumb .user-thumb {
   position: absolute;
-  bottom: 5%;
+  bottom: 20px;
 }
 
 //************ ShowStory styles ****************************************

@@ -22,16 +22,21 @@
   }
 
   .stories-index {
-    width: 100%;
-    display: block;
+    width: 90%;
+    margin: 8% auto;
+  }
+
+  .story-thumb {
+    margin-bottom: 16px;
   }
 
   .navbar {
-    padding: 5% 0 3% 1%;
+    padding: 20px 40px 10px 40px;
+    display: block;
   }
 
-  .navbar * {
-    padding-left: 3px;
+  .navbar nav {
+    justify-content: space-between;
   }
 
   .story-form {

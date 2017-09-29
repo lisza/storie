@@ -5,7 +5,7 @@ import UserThumb from '../users/user_thumb';
 
 const StoryIndexThumb = ({ story }) => (
 
-  <div className="story-thumb-box">
+  <div className="story-thumb">
       <Link to={`/stories/${story.id}`}>
         <h1>{story.title}</h1>
         {story.description ? <h3>{story.description}</h3>

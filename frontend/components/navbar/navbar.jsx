@@ -10,20 +10,21 @@ class Navbar extends React.Component {
     this.clearErrors = this.props.clearErrors.bind(this);
   }
 
+  // {currentUser.username}
   personalNav(currentUser, logout) {
     return (
       <nav>
         <Link onClick={this.clearErrors} to="/stories/new">Write a story</Link>
 
+        <span className="button-cursor-pointer" onClick={ logout }>Log Out</span>
+
         <Link className="user-thumb" to={`/users/${currentUser.id}`}>
-          Hello, {currentUser.username}!
           <img
             className="user-image-small"
             src={ currentUser.image_url }
             />
         </Link>
-        <span className="button-cursor-pointer" onClick={ logout }>Log Out</span>
-      </nav>
+    </nav>
     );
   }
 
