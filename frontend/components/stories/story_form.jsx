@@ -7,7 +7,6 @@ class StoryForm extends React.Component {
     super(props);
 
     this.state = {
-      // id: undefined,
       title: "",
       description: "",
       body: "",
@@ -50,7 +49,6 @@ class StoryForm extends React.Component {
 
 // FOR EDIT FORM
   refreshFormType(nextProps) {
-    // nextProps.location.pathname === "/stories/new" &&
     if (
         this.props.location.pathname === "/stories/new") {
       this.state.formType = "new";
@@ -66,8 +64,6 @@ class StoryForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    console.log("HANDLE SUBMIT*****THIS.PROPS: ", this.props);
 
     // FOR NEW FORM
     if (this.state.formType === "new") {

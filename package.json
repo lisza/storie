@@ -1,11 +1,13 @@
 {
   "name": "storie",
   "private": true,
+
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "lodash": "^4.16.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-linkify": "^0.2.1",
@@ -13,11 +15,13 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.6.0"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "devDependencies": {
+    "redux-logger": "^3.0.6",
+  },
+  "description": "Storie is a minimalist site to write, read, and comment on stories. It is built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails in the backend.",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
