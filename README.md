@@ -40,6 +40,9 @@ Story posts also honor paragraphs and line breaks, with the help of modern CSS `
 
 Instead of being feature heavy, the idea of the site was to be simple and working, smooth and bug free.
 
+## Wireframes
+https://github.com/lisza/storie/wiki/wireframes
+
 ## Future Features
 * At least three privacy settings: Users should be able to post publicly, friends only, and privately.
 * A limited wysiwyg text editor for the “write story” form. I’d like to keep it simple, but anticipate users' desire for adding inline images to illustrate concepts, or convey moods, or simply share personal photos or art.
