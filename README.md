@@ -24,7 +24,7 @@ Story and Comment forms auto expand and contract with text size, so users always
 #### Follows
 Users can follow and unfollow others. The button toggles neatly between the two.
 
-![Storie follows](docs/readme_images/follows.gif)
+![Storie follows](docs/readme_images/follow.gif)
 
 #### Story Write & Edit
 The background color of the Story Writer is a light yellow green, which people tend to find to be more eye friendly than white. Think legal pads and the beautiful National Brand notebooks.
