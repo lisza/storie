@@ -14,7 +14,7 @@ Storie is a minimalist site to write, read, and comment on stories. It is somewh
 ### Stories
 Storie is text focused. It is foregoing post header images as they often only marginally related to the writing. No images for the sake of having an image. The same goes for likes. They say more about marketing than quality, and popular does not equal good.
 
-![Storie main page and login](docs/readme_images/main_page_login.gif)
+![Storie main page and login](docs/readme_images/main_page_login_medium.gif)
 
 #### Comments
 Story and Comment forms auto expand and contract with text size, so users always have a full view of what they’ve typed.
