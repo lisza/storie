@@ -18,7 +18,7 @@
   flex-grow: 1;
   flex-basis: 33%;
   min-width: 260px;
-  align-items: flex-start;
+  // align-items: flex-start;
   justify-content: space-between;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -53,10 +53,6 @@
 .story-thumb-image img {
   object-fit: cover;
   height: 100%;
-}
-
-.story-thumb-content {
-  flex: 1;
 }
 
 .story-thumb-content, .story-thumb .user-thumb {
