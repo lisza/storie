@@ -10,13 +10,15 @@ class StoryForm extends React.Component {
       title: "",
       description: "",
       body: "",
-      image_url: ""
+      imageFile: null,
+      imageUrl: null
     };
 
     this.formType(); // determines the formType
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
 // FOR EDIT FORM
@@ -87,6 +89,18 @@ class StoryForm extends React.Component {
     }
   }
 
+  updateFile(event) {
+    let file = event.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   resizeForm(event) {
     const form = event.currentTarget;
     form.style.height = "40px";
@@ -125,6 +139,12 @@ class StoryForm extends React.Component {
             placeholder="Description"
             onChange={this.handleChange('description')}
             required />
+          <br />
+          <img src={this.state.imageUrl} />
+          <br />
+          <input
+            type="file"
+            onChange={this.updateFile} />
           <br />
           <textarea className="story-form-textarea-body"
             value={this.state.body}
