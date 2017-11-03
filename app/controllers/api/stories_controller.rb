@@ -29,7 +29,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def update
-    @story = Story.find(params[:id])
+    @story = Story.find(story_params[:id])
 
     if @story.author_id == current_user.id
       if @story.update_attributes(story_params)
@@ -51,6 +51,6 @@ class Api::StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :body, :description, :image_url)
+    params.require(:story).permit(:title, :body, :description, :image, :id)
   end
 end
