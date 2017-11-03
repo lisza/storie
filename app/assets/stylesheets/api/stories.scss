@@ -42,6 +42,16 @@
 .story-thumb .user-thumb {
   position: absolute;
   bottom: 20px;
+  background-color: white;
+}
+
+.story-thumb-image-box {
+  background-image: url(http://68.media.tumblr.com/47f1bb26b315fa4c053d4ce12c6a9233/tumblr_mq56lpv7oh1r6w3qso1_500.jpg);
+  height: 100px;
+  background-size: cover;
+  background-origin: border-box;
+  background-color: #f0f0f0;
+  background-position: 50% 50%;
 }
 
 //************ ShowStory styles ****************************************
