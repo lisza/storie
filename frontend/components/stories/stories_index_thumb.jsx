@@ -7,9 +7,15 @@ const StoryIndexThumb = ({ story }) => (
 
   <div className="story-thumb">
       <Link to={`/stories/${story.id}`}>
-        <h1>{story.title}</h1>
-        {story.description ? <h3>{story.description}</h3>
-      : <p>{story.body.slice(0,200)}...</p>}
+        <section className="story-thumb-image">
+          <img src={story.image_url} />
+        </section>
+
+        <section className="story-thumb-content">
+          <h1>{story.title}</h1>
+          {story.description ? <h3>{story.description}</h3>
+          : <p>{story.body.slice(0,100)}...</p>}
+        </section>
       </Link>
 
       <UserThumb
@@ -21,3 +27,6 @@ const StoryIndexThumb = ({ story }) => (
 );
 
 export default StoryIndexThumb;
+
+//
+//
