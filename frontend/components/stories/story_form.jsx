@@ -70,6 +70,8 @@ class StoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    // Create formData object to pass to API. Replaces this.state to
+    // account for imageFiles.
     const file = this.state.imageFile;
     const formData = new FormData();
     formData.append("story[title]", this.state.title);
