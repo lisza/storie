@@ -4,22 +4,27 @@
 
 //************ StoryIndex styles ***************************************
 .stories-index {
-  width: 80%;
-  margin: 5% auto;
   display: flex;
   flex-wrap: wrap;
+  width: 75%;
+  margin: 5% auto;
+
 }
 
 //************ StoryIndexThumb styles **********************************
 .story-thumb {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  flex-basis: 360px;
+  flex-basis: 33%;
+  min-width: 260px;
+  align-items: flex-start;
+  justify-content: space-between;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  height: 250px;
-  padding: 3%;
+  // height: 260px;
+  // padding: 3%;
   margin: 1%;
-  position: relative;
 }
 
 .story-thumb:hover {
@@ -30,28 +35,32 @@
 .story-thumb h1 {
   font-size: 22px;
   font-weight: 700;
-  margin: 5px 0 12px 0;
+  margin: 12px 0 10px 0;
 }
 
 .story-thumb p, .story-thumb h3 {
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(0,0,0,.7);
   white-space: pre-line;
+  margin-bottom: 12px;
 }
 
-.story-thumb .user-thumb {
-  position: absolute;
-  bottom: 20px;
-  background-color: white;
+.story-thumb-image {
+  height: 160px;
+  width: 100%;
 }
 
-.story-thumb-image-box {
-  background-image: url(http://68.media.tumblr.com/47f1bb26b315fa4c053d4ce12c6a9233/tumblr_mq56lpv7oh1r6w3qso1_500.jpg);
-  height: 100px;
-  background-size: cover;
-  background-origin: border-box;
-  background-color: #f0f0f0;
-  background-position: 50% 50%;
+.story-thumb-image img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.story-thumb-content {
+  flex: 1;
+}
+
+.story-thumb-content, .story-thumb .user-thumb {
+  margin: 0 4% 5% 4%;
 }
 
 //************ ShowStory styles ****************************************
