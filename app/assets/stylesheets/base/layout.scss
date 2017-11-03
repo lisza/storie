@@ -3,7 +3,8 @@
   // .main-content wraps around .story, .user-profile, and .story-form,
   // not .stories-index though
   .main-content {
-    max-width: 60%;
+    width: 60%;
+    max-width: 760px;
     min-width: 400px;
     margin: 8%  auto;
   }
@@ -18,6 +19,7 @@
   // not .stories-index though
   .main-content {
     width: 90%;
+    min-width: 300px;
     margin: 6% auto;
   }
 
