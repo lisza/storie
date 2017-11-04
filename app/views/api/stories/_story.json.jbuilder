@@ -1,7 +1,6 @@
 json.extract! story, :id, :title, :body, :description, :created_at
-json.image_url asset_path(story.image.url)
 
-# json.author story.author, :author_id, :username, :image_url, :biography
+json.image_url asset_path(story.image.url)
 
 json.set! "author" do
   json.author_id story.author_id

@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  flex-basis: 33%;
+  flex-basis: 30%;
   min-width: 260px;
   // align-items: flex-start;
   justify-content: space-between;
@@ -24,7 +24,7 @@
   border-radius: 3px;
   // height: 260px;
   // padding: 3%;
-  margin: 1%;
+  margin: 8px;
 }
 
 .story-thumb:hover {
@@ -48,6 +48,7 @@
 .story-thumb-image {
   height: 160px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .story-thumb-image img {
@@ -56,7 +57,7 @@
 }
 
 .story-thumb-content, .story-thumb .user-thumb {
-  margin: 0 4% 5% 4%;
+  margin: 0px 22px 20px 25px;
 }
 
 //************ ShowStory styles ****************************************
@@ -77,22 +78,30 @@
 }
 
 .story h2 {
-  font-size: 30px;
+  font-size: 36px;
+  margin-bottom: 22px;
 }
 
 .story h3 {
-  font-size: 20px;
+  font-size: 22px;
   color: rgba(0,0,0,.54);
-  margin-bottom: 12px;
+  margin-bottom: 30px;
+}
+
+.story-image {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  padding: 12px;
 }
 
 .story p {
-  font-size: 18px;
-  margin-top: 10px;
+  font-size: 20px;
+  margin-top: 25px;
   padding-bottom: 30px;
   border-bottom: 1px solid lightgrey;
   // white-space: pre-line honors line breaks coming form text area input
   white-space: pre-line;
+  overflow-wrap: break-word;
 }
 
 .story p a, .comment-item p a {

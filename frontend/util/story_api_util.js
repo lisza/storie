@@ -1,11 +1,3 @@
-export const createStory = (story) => (
-  $.ajax({
-    method: 'POST',
-    url: 'api/stories',
-    data: {story}
-  })
-);
-
 export const fetchStories = () => (
   $.ajax({
     method: 'GET',
@@ -20,11 +12,23 @@ export const fetchStory = (id) => (
   })
 );
 
+export const createStory = (story) => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/stories',
+    processData: false,
+    contentType: false,
+    data: story
+  })
+);
+
 export const updateStory = (story) => (
   $.ajax({
     method: 'PATCH',
     url: `api/stories/${story.id}`,
-    data: {story}
+    processData: false,
+    contentType: false,
+    data: story
   })
 );
 

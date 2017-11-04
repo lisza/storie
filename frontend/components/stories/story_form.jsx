@@ -10,13 +10,15 @@ class StoryForm extends React.Component {
       title: "",
       description: "",
       body: "",
-      image_url: ""
+      imageFile: null,
+      imageUrl: null
     };
 
     this.formType(); // determines the formType
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
 // FOR EDIT FORM
@@ -42,7 +44,9 @@ class StoryForm extends React.Component {
       title: this.props.story.title,
       description: this.props.story.description,
       body: this.props.story.body,
-      image_url: this.props.story.image_url,
+      // image_url: this.props.story.image_url,
+      imageFile: null,
+      imageUrl: null,
       formType: "edit"
     });
   }
@@ -62,18 +66,31 @@ class StoryForm extends React.Component {
     }
   }
 
+  // Image upload handleSubmit
   handleSubmit(event) {
     event.preventDefault();
 
+    // Create formData object to pass to API. Replaces this.state to
+    // account for imageFiles.
+    const file = this.state.imageFile;
+    const formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[description]", this.state.description);
+    formData.append("story[body]", this.state.body);
+    if (file) formData.append("story[image]", file);
+    // Make form work for updateStory when an id is required
+    if (this.props.story) formData.append("story[id]", this.props.story.id);
+
     // FOR NEW FORM
     if (this.state.formType === "new") {
-      this.props.createStory(this.state)
+      this.props.createStory(formData)
         .then(({ story }) => (
           this.props.history.push(`/stories/${story.id}`)
       ));
-    } else if (this.state.formType === "edit") {
-      // FOR EDIT FORM
-      this.props.updateStory(this.state)
+    }
+    // FOR EDIT FORM
+    else if (this.state.formType === "edit") {
+      this.props.updateStory(formData)
         .then(() => {
           this.props.history.push(`/stories/${this.props.story.id}`)
         });
@@ -84,6 +101,18 @@ class StoryForm extends React.Component {
     return (event) => {
       this.setState({ [field]: event.target.value });
       this.resizeForm(event);
+    }
+  }
+
+  updateFile(event) {
+    let file = event.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
   }
 
@@ -125,6 +154,13 @@ class StoryForm extends React.Component {
             placeholder="Description"
             onChange={this.handleChange('description')}
             required />
+          <br />
+          <img src={this.state.imageUrl} />
+          <br />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={this.updateFile} />
           <br />
           <textarea className="story-form-textarea-body"
             value={this.state.body}
