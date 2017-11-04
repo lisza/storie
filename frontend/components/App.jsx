@@ -6,6 +6,7 @@ import StoriesIndexContainer from './stories/stories_index_container';
 import StoryFormContainer from './stories/story_form_container';
 import ShowStoryContainer from './stories/show_story_container';
 import UserProfileContainer from './users/user_profile_container';
+import Footer from './footer/footer';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -24,11 +25,9 @@ const App = () => (
             component={ StoryFormContainer} formType="edit"/>
       <Route path="/users/:userId" component={UserProfileContainer}/>
     </Switch>
+
+    <Footer />
   </section>
 );
 
 export default App;
-
-// <AuthRoute path="/" component={SessionFormContainer} />
-// TODO How to make it show the login modal upon clicking a
-// protected Route when not logged in?
