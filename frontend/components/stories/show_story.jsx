@@ -31,10 +31,12 @@ class ShowStory extends React.Component {
           <h2>{story.title}</h2>
           <h3>{story.description}</h3>
 
-          <section className="story-image">
-            <img src={story.image_url}/>
-          </section>
-
+          { story.image_url === "" ? null :
+            <section className="story-image">
+              <img src={story.image_url}/>
+            </section>
+          }
+          
           <Linkify>
             <p>{story.body}</p>
           </Linkify>
