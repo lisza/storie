@@ -134,8 +134,6 @@ class StoryForm extends React.Component {
   }
 
   render() {
-    console.log("EDIT PROPS: ", this.props);
-
     return (
       <div className="main-content">
         <form className="story-form">

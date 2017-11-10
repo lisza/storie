@@ -28,18 +28,16 @@
 //********************** User Profile styles ***************************
 .user-profile {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
   padding: 12px;
 }
 
-.user-text {
-  width: 70%;
-}
-
-.user-profile img {
-  float: right;
+.user-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .user-profile h1 {

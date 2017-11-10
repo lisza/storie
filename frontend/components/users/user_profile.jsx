@@ -36,12 +36,16 @@ class UserProfile extends React.Component {
       <div className="main-content">
         <section className="user-profile">
 
-          <section className="user-text">
-            <h1>{user.username}</h1>
-            <p>{user.biography}</p>
+          <section className="user-header">
+            <section>
+              <h1>{user.username}</h1>
+              <p>{user.biography}</p>
+            </section>
+            <img className="user-image-large" src={user.image_url}></img>
           </section>
 
-          <img className="user-image-large" src={user.image_url}></img>
+
+
 
           <section className="follows">
             <p>
