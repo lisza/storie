@@ -44,9 +44,8 @@ class StoryForm extends React.Component {
       title: this.props.story.title,
       description: this.props.story.description,
       body: this.props.story.body,
-      // image_url: this.props.story.image_url,
-      imageFile: null,
-      imageUrl: null,
+      imageFile: this.props.story.imageFile,
+      imageUrl: this.props.story.image_url,
       formType: "edit"
     });
   }
@@ -135,6 +134,7 @@ class StoryForm extends React.Component {
   }
 
   render() {
+    console.log("EDIT PROPS: ", this.props);
 
     return (
       <div className="main-content">
