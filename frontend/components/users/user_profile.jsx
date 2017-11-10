@@ -4,7 +4,6 @@ import StoryIndexThumb from '../stories/stories_index_thumb';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-
     this.toggleFollow = this.toggleFollow.bind(this);
   }
 
@@ -36,10 +35,12 @@ class UserProfile extends React.Component {
     return(
       <div className="main-content">
         <section className="user-profile">
+
           <section className="user-text">
             <h1>{user.username}</h1>
             <p>{user.biography}</p>
           </section>
+
           <img className="user-image-large" src={user.image_url}></img>
 
           <section className="follows">
@@ -48,13 +49,14 @@ class UserProfile extends React.Component {
               <span>{followers.length} {followers.length === 1 ? "Follower" : "Followers"}</span>
             </p>
 
-            {currentUser && (currentUser.id === user.id) ? null :
+            {(currentUser && (currentUser.id === user.id)) ? null :
               <button onClick={this.toggleFollow}>
-                {followedByCurrentUser ? "Unfollow" : "Follow"}
+                {!currentUser ? "Log in to " : null}
+                {currentUser && followedByCurrentUser ? "Unfollow" : "Follow"}
               </button>
             }
-
           </section>
+
         </section>
 
         <section className="user-profile-feed">
