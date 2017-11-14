@@ -4,6 +4,7 @@ import ShowStoryContainer from './show_story_container';
 import UserThumb from '../users/user_thumb';
 
 const StoryIndexThumb = ({ story }) => {
+  // Manipulates flex-basis style such that boxes have varible sizes
   const thumbSize = () => {
     const sizes = [20, 30, 30, 30, 60];
     return sizes[Math.floor(Math.random() * sizes.length)];
