@@ -7,6 +7,18 @@ class StoriesIndex extends React.Component {
     this.props.fetchStories();
   }
 
+  componentDidUpdate() {
+    if(sessionStorage.scrollPosition) {
+      $(document).scrollTop(sessionStorage.scrollPosition);
+      sessionStorage.setItem("scrollPosition", 0);
+    }
+  }
+
+  componentWillUnmount() {
+    const scrollPosition = $(document).scrollTop();
+    sessionStorage.setItem("scrollPosition", scrollPosition);
+  }
+
   render() {
     const { stories } = this.props;
 
