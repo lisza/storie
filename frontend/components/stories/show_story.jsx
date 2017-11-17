@@ -13,6 +13,7 @@ class ShowStory extends React.Component {
 
   componentDidMount() {
     this.props.fetchStory(this.props.match.params.storyId);
+    window.scrollTo(0, 0);
   }
 
   handleDelete() {
@@ -36,7 +37,7 @@ class ShowStory extends React.Component {
               <img src={story.image_url}/>
             </section>
           }
-          
+
           <Linkify>
             <p>{story.body}</p>
           </Linkify>
