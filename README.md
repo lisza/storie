@@ -2,7 +2,10 @@
 
 http://storie.press
 
-Storie is a minimalist site to write, read, and comment on stories. It is somewhere between Medium, LiveJournal, and Facebook. Storie is a single page web app built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails in the backend.
+Storie is a minimalist site to write, read, and comment on stories. It is somewhere between Medium, LiveJournal, and Facebook. Storie is a single page web app built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails on the backend.
+
+## NEW!
+* Post header images are now supported and uploaded to AWS for cloud storage with help of the [paperclip gem](https://github.com/thoughtbot/paperclip).
 
 ## Features
 * Secure sign up and login. Passwords are encrypted using BCrypt. The site keeps track of returning users' logins with the help of session tokens stored in the client's browser.
@@ -12,9 +15,9 @@ Storie is a minimalist site to write, read, and comment on stories. It is somewh
 * The site's design is responsive and optimized for mobile use. The mobile version uses the reduced screen space more efficiently, and provides larger fonts for easy viewing.
 
 ### Stories
-Storie is text focused. It is foregoing post header images as they often only marginally related to the writing. No images for the sake of having an image. The same goes for likes. They say more about marketing than quality, and popular does not equal good.
+Storie is text focused. Post header images are now supported and uploaded to AWS for storage. Use responsibly :) No images for the sake of having an image.
 
-![Storie main page and login](docs/readme_images/main_page_login.gif)
+![Storie main page and login](docs/readme_images/storie2.png)
 
 #### Comments
 Story and Comment forms auto expand and contract with text size, so users always have a full view of what they’ve typed.
@@ -41,7 +44,11 @@ Story posts also honor paragraphs and line breaks, with the help of modern CSS `
 Instead of being feature heavy, the idea of the site was to be simple and working, smooth and bug free.
 
 ## Wireframes
-https://github.com/lisza/storie/wiki/wireframes
+<img src="wireframes/Homepage.png" width="250px">
+<img src="wireframes/SessionForm.png" width="250px">
+<img src="wireframes/UserProfile.png" width="250px">
+
+See all: https://github.com/lisza/storie/wiki/wireframes
 
 ## Future Features
 * At least three privacy settings: Users should be able to post publicly, friends only, and privately.
