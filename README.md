@@ -44,7 +44,7 @@ Story posts also honor paragraphs and line breaks, with the help of modern CSS `
 Instead of being feature heavy, the idea of the site was to be simple and working, smooth and bug free.
 
 ## Wireframes
-<img src="wireframes/Homepage.png" width="220px"><img src="wireframes/SessionForm.png" width="220px"><img src="wireframes/UserProfile.png" width="220px">
+<img src="wireframes/Homepage.png" width="230px"> <img src="wireframes/SessionForm.png" width="230px"> <img src="wireframes/UserProfile.png" width="230px">
 
 See all: https://github.com/lisza/storie/wiki/wireframes
 
