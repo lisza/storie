@@ -26,7 +26,8 @@ class Api::CommentsController < ApplicationController
   def index
     # returns comments for a specific story
     if params[:story_id]
-      @comments = Comment.where(story_id: params[:story_id])
+      # Eager load author with comments
+      @comments = Comment.where(story_id: params[:story_id]).includes(:author)
     else
       # returns all comments
       @comments = Comment.all
