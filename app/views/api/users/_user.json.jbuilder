@@ -1,4 +1,7 @@
-json.extract! user, :id, :username, :email, :biography, :image_url, :authored_stories, :followers, :following
+json.extract! user, :id, :username, :email, :biography, :image_url
+
+json.followers user.followers, :id, :username, :image_url
+json.following user.followers, :id, :username, :image_url
 
 if current_user
   json.followed_by_current_user current_user.following?(user)
