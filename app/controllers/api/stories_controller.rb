@@ -16,10 +16,10 @@ class Api::StoriesController < ApplicationController
   def index
     # TO FETCH ALL AUTHORED STORIES
     if params[:author_id]
-      @stories = Story.where(author_id: params[:author_id]).includes(:author)
+      @stories = Story.where(author_id: params[:author_id]).includes(:author).order(created_at: :desc)
     else
       # FETCH ALL STORIES
-      @stories = Story.all.includes(:author)
+      @stories = Story.all.includes(:author).order(created_at: :desc)
     end
   end
 
