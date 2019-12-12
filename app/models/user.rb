@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  email           :string
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  biography       :text
+#  image_url       :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 # require 'faker'
 
 class User < ApplicationRecord

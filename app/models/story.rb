@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: stories
+#
+#  id                 :integer          not null, primary key
+#  title              :string           not null
+#  body               :text             not null
+#  description        :string
+#  image_url          :string
+#  author_id          :integer          not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
 class Story < ApplicationRecord
   validates :title, :body, :author_id, presence: true
   # Paperclip defaults:

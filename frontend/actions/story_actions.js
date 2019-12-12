@@ -4,8 +4,7 @@ import { receiveErrors } from './error_actions';
 export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
-// export const FETCH_USER_STORIES = 'FETCH_USER_STORIES';
-// do i need this?
+
 
 export const fetchStories = () => (dispatch) => (
   ApiUtil.fetchStories().then(stories => (
@@ -60,17 +59,17 @@ export const fetchAuthoredStories = (id) => (dispatch) => (
   ))
 );
 
-export const receiveStories = (stories) => ({
+const receiveStories = (stories) => ({
   type: RECEIVE_STORIES,
   stories
 });
 
-export const receiveStory = (story) => ({
+const receiveStory = (story) => ({
   type: RECEIVE_STORY,
   story
 });
 
-export const removeStory = (story) => ({
+const removeStory = (story) => ({
   type: REMOVE_STORY,
   story
 });
