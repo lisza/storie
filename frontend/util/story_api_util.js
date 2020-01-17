@@ -1,21 +1,21 @@
 export const fetchStories = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/stories'
+    url: '/api/stories'
   })
 );
 
 export const fetchStory = (id) => (
   $.ajax({
     method: 'GET',
-    url: `api/stories/${id}`
+    url: `/api/stories/${id}`
   })
 );
 
 export const createStory = (story) => (
   $.ajax({
     method: 'POST',
-    url: 'api/stories',
+    url: '/api/stories',
     processData: false,
     contentType: false,
     data: story
@@ -25,7 +25,7 @@ export const createStory = (story) => (
 export const updateStory = (story) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/stories/${story.id}`,
+    url: `/api/stories/${story.id}`,
     processData: false,
     contentType: false,
     data: story
@@ -35,7 +35,7 @@ export const updateStory = (story) => (
 export const deleteStory = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/stories/${id}`
+    url: `/api/stories/${id}`
   })
 );
 
