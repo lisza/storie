@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  author_id  :integer
+#  story_id   :integer
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Comment < ApplicationRecord
   validates :body, :author_id, :story_id, presence: true;
 

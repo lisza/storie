@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:destroy]
     resources :follows, only: [:create, :destroy]
   end
+
+  get "*path", to: "static_pages#root"
 end

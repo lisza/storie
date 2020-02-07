@@ -8,7 +8,7 @@ import ShowStoryContainer from './stories/show_story_container';
 import UserProfileContainer from './users/user_profile_container';
 import Footer from './footer/footer';
 
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <section>
@@ -22,7 +22,7 @@ const App = () => (
             component={StoryFormContainer} formType="new" />
       <Route exact path="/stories/:storyId" component={ShowStoryContainer} />
       <ProtectedRoute path="/stories/:storyId/edit"
-            component={ StoryFormContainer} formType="edit"/>
+            component={StoryFormContainer} formType="edit"/>
       <Route path="/users/:userId" component={UserProfileContainer}/>
     </Switch>
 
