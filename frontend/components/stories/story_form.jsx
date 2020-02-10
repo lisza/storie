@@ -14,54 +14,66 @@ class StoryForm extends React.Component {
       imageUrl: null
     };
 
-    this.formType(); // determines the formType
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.updateFile = this.updateFile.bind(this);
   }
 
-// FOR EDIT FORM
-  componentWillReceiveProps(nextProps) {
-    this.refreshFormType(nextProps);
-  }
-
-// FOR EDIT FORM
-  formType() {
-    if (this.props.match.params.storyId) {
+  componentDidMount() {
+    // fetch data & prefill form if in edit mode
+    if (this.props.formType === 'edit') {
       this.props.fetchStory(this.props.match.params.storyId)
-        .then(() => this.prefillForm());
-      this.state.formType = "edit";
-    } else {
-      this.state.formType = "new";
+        .then(() => {
+          if (this.validateOwnership(this.props.story.author.author_id)) {
+            // show edit form
+            this.prefillForm(this.props.story);
+          } else {
+            // redirect to read only story
+            this.props.history.push(`/stories/${this.props.story.id}`)
+          }
+        });
     }
   }
 
-// FOR EDIT FORM
-  prefillForm() {
-    this.setState({
-      id: this.props.story.id,
-      title: this.props.story.title,
-      description: this.props.story.description,
-      body: this.props.story.body,
-      imageFile: this.props.story.imageFile,
-      imageUrl: this.props.story.image_url,
-      formType: "edit"
-    });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.refreshForm(nextProps);
+    }
+  }
+
+  validateOwnership(authorId) {
+    return this.props.currentUser.id === authorId;
   }
 
 // FOR EDIT FORM
-  refreshFormType(nextProps) {
-    if (
-        this.props.location.pathname === "/stories/new") {
-      this.state.formType = "new";
-    } else {
-      if (nextProps.match.params.storyId &&
-          this.state.formType !== "edit") {
-        nextProps.fetchStory(nextProps.match.params.storyId)
-          .then(() => this.prefillForm());
-      }
-      this.state.formType = "edit";
+  prefillForm(data) {
+    this.setState({
+      id: data.id,
+      title: data.title,
+      description: data.description || "",
+      body: data.body,
+      imageFile: data.imageFile,
+      imageUrl: data.image_url,
+    });
+  }  
+
+  refreshForm(nextProps) {
+  // switching from /edit to /new clears form, prefills form otherwise
+    if (nextProps.location.pathname === "/stories/new") {
+      this.setState({
+        title: "",
+        description: "",
+        body: "",
+        imageFile: null,
+        imageUrl: null,
+      });
+    } else if (nextProps.formType === "edit" &&
+      this.props.formType !== "edit") {
+        if (nextProps.story) {
+          if (this.validateOwnership(nextProps.story.author.author_id)) {
+            this.prefillForm(nextProps.story);
+          }
+        }
     }
   }
 
@@ -81,14 +93,14 @@ class StoryForm extends React.Component {
     if (this.props.story) formData.append("story[id]", this.props.story.id);
 
     // FOR NEW FORM
-    if (this.state.formType === "new") {
+    if (this.props.formType === "new") {
       this.props.createStory(formData)
         .then(({ story }) => (
           this.props.history.push(`/stories/${story.id}`)
       ));
     }
     // FOR EDIT FORM
-    else if (this.state.formType === "edit") {
+    else if (this.props.formType === "edit") {
       this.props.updateStory(formData)
         .then(() => {
           this.props.history.push(`/stories/${this.props.story.id}`)
@@ -168,7 +180,7 @@ class StoryForm extends React.Component {
           <br />
 
           <button className="story-publish-button" onClick={this.handleSubmit}>
-            { (this.state.formType === 'edit') ? "Update Story" : "Publish" }
+            { (this.props.formType === 'edit') ? "Update Story" : "Publish" }
           </button>
         </form>
       </div>
