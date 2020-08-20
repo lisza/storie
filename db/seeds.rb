@@ -13,7 +13,7 @@ ActiveRecord::Base.transaction do
   user1 = User.create!(
     username: "guest",
     password: "password",
-    image_url: "http://www.tinygraphs.com/spaceinvaders/guest?&colors=fff&colors=000"
+    image_url: "https://www.tinygraphs.com/spaceinvaders/guest?&colors=fff&colors=000"
     )
 
   5.times do
@@ -25,7 +25,7 @@ ActiveRecord::Base.transaction do
       username: username,
       password: 'password',
       biography: Faker::TwinPeaks.quote,
-      image_url: "http://www.tinygraphs.com/spaceinvaders/#{username}?&colors=#{color1}&colors=#{color2}"
+      image_url: "https://www.tinygraphs.com/spaceinvaders/#{username}?&colors=#{color1}&colors=#{color2}"
     }
     User.create!(options)
   end

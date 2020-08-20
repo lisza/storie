@@ -93,7 +93,7 @@ class User < ApplicationRecord
   def set_default_image
     unless self.image_url
       color = Faker::Color.hex_color[1..-1]
-      self.image_url = "http://www.tinygraphs.com/spaceinvaders/#{self.username}?&colors=fff&colors=#{color}"
+      self.image_url = "https://www.tinygraphs.com/spaceinvaders/#{self.username}?&colors=fff&colors=#{color}"
     end
   end
 end
