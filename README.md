@@ -1,6 +1,6 @@
 # Storie
 
-http://storie-press.herokuapp.com
+https://storie-press.herokuapp.com
 
 Storie is a minimalist site to write, read, and comment on stories. It is somewhere between Medium, LiveJournal, and Facebook. Storie is a single page web app built with React.js and Redux on the frontend, a PostgreSQL database, and Ruby on Rails on the backend.
 
